@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/TabBar/home/home",
+    "pages/Login/login",
+    "pages/TabBar/me/me",
+    "pages/TabBar/account/account",
+    "pages/Register/register",
+    "pages/Set/set/set",
+    "pages/Bankcard/Banklist/banklist",
+    "pages/Set/SwitchAccount/swacc",
+    "pages/Huiyun/AddWithdrawal/withdrawal",
+    "pages/Huiyun/WithdrawalRecord/Withdrawalrecord",
+    "pages/Huiyun/TransferRecord/transfer",
+    "pages/Coupons/Special/Special",
+    "pages/Coupons/Record/record",
+    "pages/Reward/reward",
+    "pages/Bankcard/Addbank/Addbank",
+    "pages/Product/list/list",
+    "pages/Product/details/details",
+    "pages/Address/Edit/edit",
+    "pages/Set/Headimg/Headimg",
+    "pages/Set/Password/password",
+    "pages/Address/GetAddress/getAddress",
+    "pages/Invite/invite",
+    "pages/Huiyun/Addtransfer/addtransfer",
+    "pages/Huiyun/AddExchange/exchange",
+    "pages/Huiyun/ExchangeRecord/ExchangeR"
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#2A9F93",
+    "list": [
+      {
+        "pagePath": "pages/TabBar/home/home",
+        "iconPath": "/static/icons/home.png",
+        "selectedIconPath": "/static/icons/homes.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/TabBar/account/account",
+        "iconPath": "/static/icons/account.png",
+        "selectedIconPath": "/static/icons/accounts.png",
+        "text": "账户"
+      },
+      {
+        "pagePath": "pages/TabBar/me/me",
+        "iconPath": "/static/icons/me.png",
+        "selectedIconPath": "/static/icons/mes.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index"
+  }
+}

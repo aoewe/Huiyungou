@@ -1,0 +1,11 @@
+<!--pages/Coupons/Record/record.wxml-->
+<view class="content">
+  <view class="cont-list">
+    <view class="cont-right">待发放</view>
+    <view class="cont-text">
+      <view class="one">A仓</view>
+      <view class="two">购买数量：1000</view>
+      <view class="two">购买时间：2023-03-07 08:45:46</view>
+    </view>
+  </view>
+</view>

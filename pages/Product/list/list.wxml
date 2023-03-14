@@ -1,0 +1,8 @@
+<!--pages/Productlist/list.wxml-->
+<view class="product-list">
+  <navigator wx:for="{{products}}" wx:key="id" class="product-item"  url="{{'../details/details?id='+item.id}}">
+    <image src="{{item.main_pic}}" mode="aspectFill" class="product-image" />
+    <view class="product-name">{{item.product_name}}</view>
+    <text class="textone">¥<text class="texttow">{{item.price}}</text></text>
+  </navigator>
+</view>

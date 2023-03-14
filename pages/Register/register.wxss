@@ -1,0 +1,98 @@
+page {
+  background-color: #ffffff;
+}
+
+.backgran {
+  position: absolute;
+  right:0;
+  display: block;
+  width: 348rpx;
+  height: 288rpx;
+  z-index: -999;
+}
+
+.title {
+  color: #1D1D1D;
+  font-size: 56rpx;
+  font-weight: bold;
+  padding-top: 80rpx;
+  padding-left: 66rpx;
+  padding: 80rpx 66rpx 120rpx;
+}
+
+.register {
+  position: absolute;
+  right: 28rpx;
+}
+
+.input {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 574rpx;
+  height: 96rpx;
+  background: #F5F7F7;
+  border-radius: 42rpx;
+  margin: 48rpx auto 0;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+}
+
+input {
+  width: 90%;
+  font-size: 28rpx;
+  z-index: 1;
+}
+
+text {
+  padding-right: 40rpx;
+}
+
+.placeholder {
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  color: #333333;
+  font-size: 28rpx;
+  width: 574rpx;
+  margin: 40rpx auto;
+}
+
+.input text.code {
+  position: absolute;
+  right: 0;
+  color: #0263D4;
+  z-index: 99;
+}
+
+image {
+  width: 36rpx;
+  height: 26rpx;
+  filter: invert(.6);
+  position: absolute;
+  right: 32rpx;
+}
+
+.botton {
+  margin: 30rpx 70rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  float: right;
+}
+
+.backgranb {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  display: block;
+  width: 348rpx;
+  height: 288rpx;
+  z-index: -999;
+}

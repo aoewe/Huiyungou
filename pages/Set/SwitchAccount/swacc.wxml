@@ -1,0 +1,14 @@
+<view>
+  <view class="content">
+    <view class="cont-list">
+    <view class="check-icon">
+      <image class="head-icon" src="" />
+    </view>
+      <view class="cont-txt">我的第一个账号</view>
+    </view>
+    <view class="cont-list">
+      <image style="width: 84rpx;height: 84rpx;" src="/static/icons/add.png" />
+      <view class="cont-txt">添加账号</view>
+    </view>
+  </view>
+</view>

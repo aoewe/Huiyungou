@@ -1,0 +1,31 @@
+<!-- 提现 -->
+
+<view>
+  <image class="cont-top" src="/static/icons/Withdrawalb.png"></image>
+  <view class="top">
+  <navigator open-type="navigateBack"><van-icon name="arrow-left" /></navigator>
+  <view>提现</view>
+<view class="block" style="text-align: end;" ></view>
+</view>
+<view class="flex">
+<view class="Mymoney">我的余额（元）</view>
+<navigator url="../WithdrawalRecord/Withdrawalrecord">提现记录</navigator>
+</view>
+<view class="money">¥<text>879.00</text></view>
+<view class="cont-block">
+  <view class="b-drawal">提现金额</view>
+  <view class="withdrawal">
+  <text class="">¥</text><input style="height: 90rpx;margin-left: 20rpx;" type="digit" auto-focus />
+</view>
+<view class="b-bank">
+  <view>提现至</view>
+  <view>建设银行<van-icon name="arrow" /></view>
+</view>
+<view class="btn">
+    <van-button color="#2A9F93" bindtap="register" size="round" round custom-class="external-class">申请提现</van-button>
+  </view>
+</view>
+<view class="b-text">温馨提示：汇率（1积分=0.95RMB 含手续费）
+提现金额需100.00起，提现金额必须是100.00的倍数，
+双休日和国家法定假日不接受提现。</view>
+</view>

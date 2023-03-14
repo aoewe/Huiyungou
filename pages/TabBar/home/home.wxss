@@ -1,0 +1,65 @@
+.swiper {
+  margin: 26rpx auto 0;
+  padding-bottom: 8rpx;
+  width: 100vw;
+  height: 280rpx;
+}
+
+.Cent-Sp {
+  width: 95%;
+  margin: auto;
+  margin-top: 45rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.Sp-img {
+  width: 360rpx;
+  height: 202rpx;
+}
+
+.shopping {
+  margin-top: 51rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: #1D1D1D;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10rpx;
+
+}
+
+.product-item {
+  padding: 18rpx;
+  width: calc(50% - 5rpx);
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  box-shadow: 0 0 5rpx rgba(0, 0, 0, .1);
+  border-radius: 5rpx;
+  overflow: hidden;
+  border-radius: 24rpx;
+}
+
+.product-item image {
+  width: 336rpx;
+  height: 336rpx;
+}
+
+.textone {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ED213A;
+}
+
+.texttow {
+  font-size: 34rpx;
+  font-family: OPPOSans;
+  font-weight: 500;
+}

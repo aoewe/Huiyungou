@@ -1,0 +1,10 @@
+@import '../AddWithdrawal/withdrawal.wxss';
+
+.cont-block {
+  height: 589rpx;
+}
+
+.external-class {
+  width: 638rpx !important;
+  height: 80rpx !important;
+}

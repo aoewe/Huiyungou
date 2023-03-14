@@ -1,0 +1,52 @@
+/* pages/Productlist/list.wxss */
+
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10rpx;
+
+}
+
+.product-item {
+  padding: 18rpx;
+  width: calc(50% - 5rpx);
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  box-shadow: 0 0 5rpx rgba(0, 0, 0, .1);
+  border-radius: 5rpx;
+  overflow: hidden;
+  border-radius: 24rpx;
+}
+
+.product-image {
+  width: 350rpx;
+  height: 350rpx;
+  border-radius: 24rpx 24rpx 0rpx 0rpx
+}
+
+.product-name {
+  padding: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.product-price {
+  padding: 10rpx;
+  font-size: 32rpx;
+  color: #f00;
+}
+
+.textone {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ED213A;
+}
+
+.texttow {
+  font-size: 34rpx;
+  font-family: OPPOSans;
+  font-weight: 500;
+}

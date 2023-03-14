@@ -1,0 +1,35 @@
+<view>
+  <image class="cont-top" src="/static/icons/mybackage.png"></image>
+  <view class="head-top" style="color: #ffff;font-weight: normal;">我的</view>
+  <view class="head-flex">
+    <image class="head-picture" src="{{UserInfo.avatar}}" />
+    <view>
+      <view class="head-txt">{{UserInfo.username}}</view>
+      <view class="head-txt" style="font-size: 29rpx;">会员号：{{UserInfo.uuid}}</view>
+    </view>
+  </view>
+  <view class="my-spping">
+    <navigator hover-class="none" url="../subPages/orderList/orderList" class="title">我的订单<view style="color: #999999;">查看所有订单
+        <van-icon name="arrow" />
+      </view>
+    </navigator>
+    <view class="order-icon">
+    <navigator hover-class="none" url="{{item.url}}" class="item" wx:for="{{orderIcon}}" wx:key="index">
+      <image src="{{item.img}}"></image>
+      <text>{{item.lable}}</text>
+    </navigator>
+  </view>
+  </view>
+  <view class="conter">
+    <view class="cont-txt">服务与工具</view>
+    <view class="order-icon">
+    <navigator hover-class="none" url="{{item.url}}" class="item top" wx:for="{{contIcon}}" wx:key="index">
+      <image src="{{item.img}}"></image>
+      <text>{{item.lable}}</text>
+    </navigator>
+  </view>
+  </view>
+
+  <button class="isbotton" bindtap="exit">退出登录</button>
+  
+</view>

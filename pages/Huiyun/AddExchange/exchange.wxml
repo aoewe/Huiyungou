@@ -1,0 +1,25 @@
+<!-- 添加兑换 -->
+
+<view>
+  <image class="cont-top" src="/static/icons/Withdrawalb.png"></image>
+  <view class="top">
+  <navigator open-type="navigateBack" ><van-icon name="arrow-left" /></navigator>
+  <view>兑换</view>
+<view class="block" style="text-align: end;" ></view>
+</view>
+<view class="flex">
+<view class="Mymoney">我的拼券积分</view>
+<navigator url="../ExchangeRecord/ExchangeR">兑换记录</navigator>
+</view>
+  <view class="money">¥<text>879.00</text></view>
+  <view class="cont-block">
+    <view class="b-drawal">兑换积分</view>
+    <view class="withdrawal">
+      <text class="">数量：</text><input style="margin-left: 20rpx;width: 400rpx;" maxlength="10" type="digit" auto-focus />
+    </view>
+    <view class="btn">
+      <van-button color="#2A9F93" bindtap="register" size="round" round custom-class="external-class">提交</van-button>
+    </view>
+  </view>
+  <view class="b-text">温馨提示：拼券积分兑换积分手续费10%</view>
+</view>

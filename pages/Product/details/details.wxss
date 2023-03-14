@@ -1,0 +1,209 @@
+page {
+  background: rgb(243 245 247);
+}
+
+.back {
+  position: absolute;
+  z-index: 9;
+  display: flex;
+  padding-left: 12rpx;
+}
+
+.back .van-icon {
+  font-weight: bold;
+}
+
+.like {
+  position: absolute;
+  right: 42rpx;
+  top: 200rpx;
+  height: 54rpx;
+  width: 54rpx;
+}
+
+/* 轮播图 */
+.swiper_position {
+  position: relative;
+}
+
+.main_swiper {
+  height: 702rpx;
+  width: 750rpx;
+}
+
+.main_swiper .swiper_item image,
+.main_swiper .swiper_item video {
+  width: 750rpx;
+  height: 702rpx;
+}
+
+.swiper_item_num {
+  position: absolute;
+  bottom: 24rpx;
+  right: 30rpx;
+  width: 80rpx;
+  height: 40rpx;
+  background: #000000;
+  border-radius: 20px;
+  opacity: 0.3;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper_item_num text {
+  font-weight: 600;
+  color: #FFFFFF;
+  font-size: 13px;
+}
+
+/* 内容 */
+.detail_content {
+  width: 95%;
+  margin: 24rpx auto;
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.content_text {
+  color: #FF4701;
+}
+
+.content_text .e {
+  font-size: 18rpx;
+}
+
+.content_text text:nth-of-type(1) {
+  font-size: 32rpx;
+  font-family: Heiti SC;
+  font-weight: 500;
+  color: #FF4701;
+}
+
+.content_text text:nth-of-type(2) {
+  font-size: 32rpx;
+  font-family: Heiti SC;
+  font-weight: 500;
+  color: #FF4701;
+}
+
+.content_text2 {
+  color: #333333;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+/* 向上滑动顶部 */
+.top-nav {
+  box-sizing: border-box;
+  padding-bottom: 10rpx;
+  width: 100%;
+  background: #FFFFFF;
+  position: fixed;
+  top: 0;
+  display: none;
+  z-index: 99;
+}
+
+.choose {
+  width: 95%;
+  margin: auto;
+  height: 190rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+}
+
+.chooset {
+  display: flex;
+  padding: 25rpx;
+  justify-content: space-between;
+}
+
+.chooset text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-left: 40rpx;
+}
+
+.a {
+  display: flex;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+  align-items: center;
+}
+
+.threeimg {
+  display: flex;
+  margin: 30rpx 40rpx;
+  justify-content: space-between;
+}
+
+.threeimg image {
+  margin-right: 20rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.centers {
+  display: flex;
+    align-items: center;
+}
+
+
+/* 图文详情 */
+.imgText {
+  width: 100%;
+  position: relative;
+}
+
+.imgText::before {
+  content: '';
+  position: absolute;
+  width: 120rpx;
+  height: 2rpx;
+  background: #CCCCCC;
+  top: 20rpx;
+  right: 150rpx;
+}
+
+.imgText::after {
+  content: '';
+  position: absolute;
+  width: 120rpx;
+  height: 2rpx;
+  background: #CCCCCC;
+  top: 20rpx;
+  left: 150rpx;
+}
+
+.imgText view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgText view text {
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.imgText_content {
+  margin-top: 28rpx;
+  background-color: #ffffff !important;
+}
+
+.imgText_content view {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgText_content view image {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,17 @@
+<!--转赠记录-->
+<view>
+  <view class="conter-list">
+    <view>
+      <view class="black">
+        <text>积分</text><text style="color: #2A9F93;">转</text><text>拼券积分 </text>
+      </view>
+      <view class="black">
+        <text>孙明玉</text>
+        <image class="cont-turn" src="/static/icons/turn.png" /><text>路飞</text>
+      </view>
+      <view class="black cont-time">2023-03-07 08:45:46</view>
+    </view>
+    <view style="font-size: 36rpx;font-family: PingFang SC;font-weight: 500;color: #333333;">1500.00</view>
+  </view>
+ 
+</view>

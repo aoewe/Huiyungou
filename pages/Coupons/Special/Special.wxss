@@ -1,0 +1,83 @@
+/* pages/Coupons/Special/Special.wxss */
+
+.conter {
+  display: flex;
+  width: 95%;
+  margin: 30rpx auto;
+  height: 210rpx;
+  position: relative;
+}
+
+image {
+  position: absolute;
+  display: block;
+  width: 698rpx;
+  height: 210rpx;
+  z-index: -999;
+}
+
+.c-te {
+  padding: 0rpx 20rpx;
+  font-size: 72rpx;
+font-family: PingFang SC;
+font-weight: bold;
+color: #FFFFFF;
+}
+
+.one {
+  font-size: 28rpx;
+font-family: PingFang SC;
+font-weight: bold;
+color: #FFFFFF;
+}
+
+.tow {
+  font-size: 24rpx;
+font-family: PingFang SC;
+font-weight: 500;
+color: #FFFFFF;
+}
+
+text{
+  font-size: 24rpx;
+font-family: PingFang SC;
+font-weight: 500;
+color: #FFFFFF;
+margin-right: 20rpx;
+}
+
+.left {
+  margin: 40rpx 0rpx;
+  margin-left: 55rpx;
+  text-align: center;
+}
+
+.left .go {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FF2A48;
+}
+.left text {
+  font-size: 24rpx;
+font-family: PingFang SC;
+font-weight: 500;
+color: #FF2A48;
+margin-right: 0rpx;
+}
+
+.time{
+  color: #FF2A48;
+}  
+
+.time text {
+  width: 28rpx;
+  height: 28rpx;
+  padding: 2rpx;
+  background: #FF2A48;
+  border-radius: 4rpx;
+font-size: 20rpx;
+font-family: PingFang SC;
+font-weight: 500;
+color: #FFFFFF;
+}

@@ -1,0 +1,16 @@
+<!--pages/Reward/reward.wxml-->
+<view>
+  <image class="cont-top" style="height: 568rpx;" src="/static/icons/reward.png"></image>
+  <view class="text">
+  <image class="imgtxt" src="/static/icons/rewardmx.png"/>
+</view>
+<view class="top">
+  <text style="margin-left: 70rpx;">日期</text>
+  <text>小计</text>
+</view>
+<view class="content">
+  <view class="black">
+  <text class="times">2023-03-07 00:27:41</text><text class="numbers">200</text>
+</view>
+</view>
+</view>

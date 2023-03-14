@@ -1,0 +1,69 @@
+/* pages/Reward/reward.wxss */
+
+page {
+  background: #de2a33;
+}
+
+.text {
+  display: flex;
+  padding-top: 140rpx;
+  justify-content: center;
+}
+
+.imgtxt {
+  width: 440rpx;
+  height: 84rpx;
+}
+
+.top {
+  margin: auto;
+  margin-top: 340rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FBC960;
+  width: 678rpx;
+  height: 84rpx;
+  background: #F8564A;
+  border-radius: 16rpx 16rpx 0rpx 0rpx;
+}
+
+.top text {
+  padding: 0rpx 100rpx;
+}
+
+.content {
+  margin: auto;
+  width: 678rpx;
+  height: 800rpx;
+  background: #FEF5D4;
+  border-radius: 0rpx 0rpx 16rpx 16rpx;
+
+}
+
+.black {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #F7ECC2;
+}
+
+.times {
+  padding: 24rpx 0rpx;
+  padding-left: 70rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FE0035;
+}
+
+.numbers {
+  padding: 24rpx 0rpx;
+  padding-right: 110rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FE0035;
+}

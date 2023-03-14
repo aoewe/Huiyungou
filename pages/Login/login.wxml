@@ -1,0 +1,20 @@
+<view style="height: {{statusBar.height}}px;padding-top: {{statusBar.top}}px;">
+<image class="backgran" src="/static/icons/logint.png"/>
+  <navigator hover-class="noen" open-type="navigateBack">
+    <van-icon size="44rpx" style="height: {{statusBar.height}}px;padding-left: 28px;margin-top: 160rpx;" name="cross" />
+  </navigator>
+</view>
+<view>
+  <view class="title">用户登录</view>
+  <view class="input">
+    <input type="number" maxlength="11" placeholder-class="placeholder" model:value="{{username}}" placeholder="请输入用户名" />
+  </view>
+  <view class="input">
+    <input type="password" placeholder-class="placeholder" model:value="{{password}}" placeholder="输入登陆密码" />
+  </view>
+  <view class="btn">
+    <van-button bindtap="submit" color="#2A9F93" size="round" round custom-class="external-class">登录</van-button>
+  </view>
+  <navigator class="botton"  url="../Register/register">我要注册</navigator>
+<image class="backgranb" src="/static/icons/loginb.png"/>
+</view>
