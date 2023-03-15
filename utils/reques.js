@@ -17,7 +17,7 @@ const request = (url, method, data) => {
       success: res => {
         if (res.data.code === 700) {
           wx.navigateTo({
-            url: '/pages/subPages/users/login',
+            url: '/pages/Login/login',
           })
           wx.removeStorageSync('USERINFO')
           wx.removeStorageSync('type')
