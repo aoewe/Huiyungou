@@ -51,7 +51,7 @@ Page({
   {
     img: '/static/icons/5.png',
     lable: '设置中心',
-    url: '/pages/Set/set/set'
+    url: '/pages/Serve-Tool/Set/set'
   },
   {
     img: '/static/icons/6.png',

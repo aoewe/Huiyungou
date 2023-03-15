@@ -1,0 +1,29 @@
+<view>
+  <view class="content">
+    <navigator class="cont-list">
+      <view class="cont-txt">修改头像</view>
+      <view class="cont-left">
+        <image style="width: 64rpx;height: 64rpx;background: cyan;border-radius: 50%;" src="" />
+        <van-icon name="arrow" />
+      </view>
+    </navigator>
+    <navigator class="cont-list" url="/pages/Address/Edit/edit">
+      <view class="cont-txt">收货地址</view>
+      <view class="cont-left">
+        <van-icon name="arrow" />
+      </view>
+    </navigator>
+    <navigator class="cont-list" url="../SwitchAccount/swacc">
+      <view class="cont-txt">切换账号</view>
+      <view class="cont-left">
+        <van-icon name="arrow" />
+      </view>
+      </navigator>
+      <navigator class="cont-list">
+        <view class="cont-txt">支付密码</view>
+        <view class="cont-left">
+          <van-icon name="arrow" />
+        </view>
+      </navigator>
+  </view>
+</view>

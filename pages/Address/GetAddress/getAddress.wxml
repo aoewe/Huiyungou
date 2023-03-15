@@ -23,7 +23,7 @@
   <van-loading wx:if="{{loading}}" type="spinner" color="#B7312A" />
 </view>
 <view class="no-content" wx:if="{{list.length<1 && !loading}}">
-  <image src="../../../static/imgs/nocontent.png"></image>
+  <!-- <image src="../../../static/imgs/nocontent.png"></image> -->
 </view>
 <view class="bottom"></view>
 <navigator hover-class="none" url="../Edit/edit" class="btn">

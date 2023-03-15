@@ -1,18 +1,20 @@
 <!--pages/Coupons/Special/Special.wxml-->
 <view>
-  <view class="conter">
+  <view class="conter" wx:for="{{DealInfo}}" wx:key="index">
     <image src="/static/icons/coupons.png"/>
-    <view class="c-te">A.</view>
+    <view class="c-te">{{item.name}}.</view>
     <view style="margin: 30rpx 0rpx;">
-      <view class="one">福利A仓拼券抢购</view>
-      <view  class="tow">开始时间：2023-03-08 12:54:50</view>
-      <view  class="tow">结束时间：2023-03-08 12:54:50</view>
-      <text>最大购买：2023</text><text>最小购买：2023</text>
+      <view class="one">{{item.content}}</view>
+      <view  class="tow">开始时间：{{item.deal_info.begin_time}}</view>
+      <view  class="tow">结束时间：{{item.deal_info.end_time}}</view>
+      <text>最大购买：{{item.deal_info.max_number}}</text><text>最小购买：{{item.deal_info.min_number}}</text>
     </view>
     <view class="left">
-      <view class="go">未开始</view>
-      <text>距开始</text>
-      <view class="time"><text>13</text>:<text>14</text>:<text>00</text></view>
+      <view class="go" wx:if="{{item.deal_info.status === 0}}">未开始</view>
+      <view class="start" wx:if="{{item.deal_info.status === 1}}">开启中</view>
+      <view class="go" wx:if="{{item.deal_info.status === 2}}">已结束</view>
+      <text wx:if="{{item.deal_info.status === 0}}">距开始</text>
+      <view wx:if="{{item.deal_info.status === 0}}" class="time"><text>13</text>:<text>14</text>:<text>00</text></view>
     </view>
   </view>
 </view>
