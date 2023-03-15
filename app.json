@@ -11,6 +11,7 @@
     "pages/Serve-Tool/Headimg/Headimg",
     "pages/Serve-Tool/Password/password",
     "pages/Huiyun/AddWithdrawal/withdrawal",
+    "pages/placeOrder/placeOrder",
     "pages/Huiyun/WithdrawalRecord/Withdrawalrecord",
     "pages/Huiyun/TransferRecord/transfer",
     "pages/Coupons/Special/Special",
@@ -26,6 +27,14 @@
     "pages/Huiyun/AddExchange/exchange",
     "pages/Huiyun/ExchangeRecord/ExchangeR"
   ],
+  "subPackages": [{
+    "root": "pages/subPages/",
+    "pages": [
+      "orderDetails/orderDetails",
+      "twoPayment/twoPayment",
+      "orderList/orderList"
+    ]
+  }],
   "tabBar": {
     "color": "#999999",
     "selectedColor": "#2A9F93",
@@ -49,6 +58,22 @@
         "text": "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于选择地址信息"
+    }
+  },
+  "requiredPrivateInfos": ["getLocation"],
+  "plugins": {
+    "citySelector": {
+      "version": "1.0.0",
+      "provider": "wx63ffb7b7894e99ae"
+    },
+    "chooseLocation": {
+      "version": "1.0.8",
+      "provider": "wx76a9a06e5b4e693e"
+    }
   },
   "window": {
     "backgroundTextStyle": "light",

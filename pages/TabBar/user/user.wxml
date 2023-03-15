@@ -9,7 +9,7 @@
     </view>
   </view>
   <view class="my-spping">
-    <navigator hover-class="none" url="../subPages/orderList/orderList" class="title">我的订单<view style="color: #999999;">查看所有订单
+    <navigator hover-class="none" url="../../subPages/orderList/orderList" class="title">我的订单<view style="color: #999999;">查看所有订单
         <van-icon name="arrow" />
       </view>
     </navigator>

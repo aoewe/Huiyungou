@@ -10,33 +10,33 @@ Page({
     orderIcon: [{
       img: '/static/icons/FK.png',
       lable: '待付款',
-      url: '../subPages/orderList/orderList?active=1'
+      url: '../../subPages/orderList/orderList?active=1'
     },
     {
       img: '/static/icons/FH.png',
       lable: '待发货',
-      url: '../subPages/orderList/orderList?active=2'
+      url: '../../subPages/orderList/orderList?active=2'
     },
     {
       img: '/static/icons/SH.png',
       lable: '待收货',
-      url: '../subPages/orderList/orderList?active=3'
+      url: '../../subPages/orderList/orderList?active=3'
     },
     {
       img: '/static/icons/QB.png',
       lable: '全部',
-      url: '../subPages/orderList/orderList?active=4'
+      url: '../../subPages/orderList/orderList?active=4'
     },
   ],
   contIcon: [{
     img: '/static/icons/1.png',
     lable: '实名认证',
-    url: '../subPages/orderList/orderList?active=1'
+    url: '../../subPages/orderList/orderList?active=1'
   },
   {
     img: '/static/icons/2.png',
     lable: '邀请好友',
-    url: '../subPages/orderList/orderList?active=2'
+    url: '../../subPages/orderList/orderList?active=2'
   },
   {
     img: '/static/icons/3.png',
@@ -80,7 +80,6 @@ Page({
 
   async getUserInfo(){
     const res = await api.getUserInfo()
-    console.log('个人信息',res);
     if (res.code === 0) {
       this.setData({
         UserInfo:res.data

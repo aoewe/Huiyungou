@@ -3,14 +3,17 @@ page {
 }
 
 .back {
-  position: absolute;
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  position: fixed;
   z-index: 9;
   display: flex;
-  padding-left: 12rpx;
-}
-
-.back .van-icon {
-  font-weight: bold;
+  height: 54rpx;
+  width: 54rpx;
+  display: flex;
+  justify-content: center;
+  left: 24rpx;
+  color: #ffffff;
 }
 
 .like {
@@ -159,7 +162,7 @@ page {
 /* 图文详情 */
 .imgText {
   width: 100%;
-  position: relative;
+  padding: 30rpx 0;
 }
 
 .imgText::before {
@@ -194,7 +197,6 @@ page {
 }
 
 .imgText_content {
-  margin-top: 28rpx;
   background-color: #ffffff !important;
 }
 
@@ -206,4 +208,107 @@ page {
 .imgText_content view image {
   width: 100%;
   height: 100%;
+}
+/* 购买规格选择 */
+.close {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+
+.specifications-info {
+  padding: 30rpx;
+  background-color: #ffffff;
+}
+
+.price-stock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 15rpx;
+}
+
+.price-stock text:first-child {
+  font-weight: bold;
+  color: red;
+}
+
+.price-stock text+text {
+  padding-top: 6rpx;
+  font-size: 24rpx;
+}
+
+.info-top {
+  display: flex;
+}
+
+.specifications-info image {
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 10rpx;
+}
+
+.choice {
+  font-size: 28rpx;
+}
+
+.choice-title,
+.choice-count text {
+  font-weight: 600;
+  padding: 20rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.choice-info {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+}
+
+.choice-info view {
+  font-size: 24rpx;
+  padding: 8rpx 24rpx;
+  background-color: #eeeeee;
+  border-radius: 50rpx;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+  border: 1rpx solid #eeeeee;
+}
+
+.choice-info view.active {
+  color: #FF4701;
+  background-color: rgba(220, 186, 122, .3);
+  border: 1rpx solid #FF4701;
+}
+
+.choice-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.not-box {
+  height: 80rpx;
+}
+
+.bottom-btn {
+  background-color: #ffffff;
+  height: 80rpx;
+  border-top: 1rpx solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: calc(-30rpx + env(safe-area-inset-bottom)) 0;
+}
+.van-button--danger{
+  background: #FF4701 !important;
+}
+.bottom-btn .van-button {
+  background-color: #FF4701;
+  height: 72rpx;
+  color: #FFFFFF;
+  width: 95vw;
 }

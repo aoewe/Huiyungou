@@ -1,33 +1,34 @@
 <view>
-  <view class="head-top">首页</view>
+  <view class="header" style="padding-top:{{statusBar.top}}px">首页</view>
+  <view style="height: 102px;"></view>
   <swiper class="swiper" indicator-dots="{{swiperList.length<2?false:true}}" autoplay="{{true}}" interval="{{5000}}" circular="{{true}}">
-    <block>
-      <swiper-item wx:for="{{swiperList}}" wx:key="index">
-        <van-image lazy-load width="694rpx" height="280rpx" src="{{item.url}}" use-loading-slot>
-          <image mode="aspectFill" slot="loading" src="http://manage.stzs6888.com/images/fallback.png"></image>
-        </van-image>
+    <block wx:for="{{swiperList}}" wx:key="index">
+      <swiper-item>
+        <van-image lazy-load custom-class="banner-img" src="{{item.url}}"></van-image>
       </swiper-item>
     </block>
   </swiper>
   <view class="Cent-Sp">
     <view>
       <image class="Sp-img" src="/static/icons/Special1.png" bindtap="GoProductList" data-id="{{1}}" />
-      <image class="Sp-img" src="/static/icons/Special4.png" bindtap="GoProductList" data-id="{{3}}"/>
+      <image class="Sp-img" src="/static/icons/Special4.png" bindtap="GoProductList" data-id="{{3}}" />
     </view>
     <view>
-      <image class="Sp-img" src="/static/icons/Special2.png" bindtap="GoProductList" data-id="{{2}}"/>
-      <image class="Sp-img" src="/static/icons/Special3.png" bindtap="GoProductList" data-id="{{4}}"/>
+      <image class="Sp-img" src="/static/icons/Special2.png" bindtap="GoProductList" data-id="{{2}}" />
+      <image class="Sp-img" src="/static/icons/Special3.png" bindtap="GoProductList" data-id="{{4}}" />
     </view>
   </view>
-  <view class="shopping">商·品·展·示</view>
+  <view class="shopping">商 · 品 · 展 · 示</view>
   <view class="product-list" wx:if="{{showProduct.length}}">
-    <navigator class="product-item" url="{{'../subPages/goodsDetails/goodsDetails?id='+item.id}}" wx:for="{{showProduct}}" wx:key="index">
+    <navigator class="product-item" url="../../Product/details/details?id={{item.id}}" wx:for="{{showProduct}}" wx:key="index">
       <image src="{{item.main_pic}}"></image>
-      <view>{{item.product_name}}</view>
-      <text class="textone">¥<text class="texttow">{{item.price}}</text></text>
+      <view class="info">
+        <view class="ellipsis-text">{{item.product_name}}</view>
+        <text class="textone">¥<text class="texttow">{{item.price}}</text></text>
+      </view>
     </navigator>
   </view>
   <view class="no-content" wx:else>
-    <image src="../../static/imgs/nocontent.png"></image>
+    <image src="../../../static/imgs/nocontent.png"></image>
   </view>
 </view>

@@ -19,7 +19,7 @@
       <input type="text" value="{{params.door_num}}" bindinput="changeDoornum" placeholder="请输入详细地址，例：8层8088" />
     </view>
     <view class="switch"><text>设置默认地址</text>
-      <van-switch size="24px" active-color="#B7312A" checked="{{ params.sort==1?true:false }}" bind:change="checked" />
+      <van-switch size="24px" active-color="#299f92" checked="{{ params.sort==1?true:false }}" bind:change="checked" />
     </view>
   </view>
   <view class="user">

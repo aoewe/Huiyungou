@@ -1,0 +1,18 @@
+<view class="payment-content">
+  <view>剩余支付时间{{time}}</view>
+  <view>
+    <text>{{info.payment_money}}</text>
+  </view>
+  <view>{{info.good_name}}</view>
+</view>
+
+<view class="bottom safe">
+  <!-- <view class="forget-password" bindtap="toUpPassword">忘记支付密码？</view> -->
+  <van-button color="#2A9F93" bindtap="pay">确认支付</van-button>
+</view>
+<!-- 钱包支付面板 -->
+<view>
+  <view wx:if="{{showPassword}}">
+    <password-input show="{{showPassword}}" top="{{0}}" payPrice="{{info.payment_money}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>
+  </view>
+</view>

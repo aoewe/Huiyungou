@@ -60,7 +60,7 @@ Page({
     let params = e.target.dataset.item || e.currentTarget.dataset.item
     params = JSON.stringify(params)
     wx.navigateTo({
-      url: '../addAddress/addAddress?params=' + params,
+      url: '../Edit/edit?params=' + params,
     })
   },
   selAddress(e) {

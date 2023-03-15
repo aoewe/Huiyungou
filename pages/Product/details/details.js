@@ -2,11 +2,8 @@ const fetch = require("../../../utils/reques").default;
 const app = getApp()
 Page({
   data: {
-    bottom: wx.getStorageSync('bottom'),
-    type:wx.getStorageSync('type'),
-    jiaonang: wx.getMenuButtonBoundingClientRect(),
+    statusBar: wx.getMenuButtonBoundingClientRect(),
     showSpecifications: false,
-    point: 0, //导航锚点
     id: '', //当前产品id
     isParameter: false,
     comments: [], //评论
@@ -18,7 +15,6 @@ Page({
     swiperNum: null, //轮播数字
     selectNum: 1, //选中数量
     address: '', //配送默认地址
-    city: ''
   },
   goDetails(){
     wx.pageScrollTo({
@@ -30,25 +26,6 @@ Page({
       scrollTop: 0
     })
   },
-  // 商品收藏
-  handelLike(e) {
-    let data = {
-      product_id: e.currentTarget.dataset.id,
-      type: 2
-    }
-    fetch.setCollection(data).then(res => {
-      if (res.data.code === 0) {
-        wx.showToast({
-          title: '收藏成功'
-        })
-      } else {
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none'
-        })
-      }
-    })
-  },
   // 图片放大
   preview(e) {
     wx.previewImage({
@@ -57,22 +34,6 @@ Page({
     })
   },
   
-  // 导航栏显示/隐藏
-  showNav(scrollTop, maxTop) {
-    let opacity = 0
-    let point = this.data.point
-    if (scrollTop > maxTop) opacity = 1
-    if (scrollTop < 620) {
-      point = 0
-    } else {
-      point = 1
-    }
-    this.setData({
-      point,
-      opacity,
-      scrollTop: scrollTop
-    })
-  },
   handelBack() {
     wx.navigateBack()
   },
@@ -106,7 +67,7 @@ Page({
     let address = this.data.address
     address = JSON.stringify(address)
     wx.navigateTo({
-      url: '../placeOrder/placeOrder?address=' + address,
+      url: '../../placeOrder/placeOrder?address=' + address,
     })
   },
   handelClose() {
@@ -136,23 +97,8 @@ Page({
     const {code,data} = await fetch.getProductdetail({
         id: this.data.id})
       if (code === 0) {
-        console.log(data);
         this.setData({
           detailData: data
-        })
-      }
-  },
-  //获取评论
-  async loadComments() {
-    const {code,data} = await fetch.getWineComments(
-      {
-        id: this.data.id,
-        page: 1,
-        size: 3
-      })
-      if (code === 0) {
-        this.setData({
-          comments: data
         })
       }
   },
@@ -241,12 +187,6 @@ Page({
       }
     })
   },
-  // 查看更多评论
-  handelMoreComments() {
-    wx.navigateTo({
-      url: '/hotelPages/pages/commentAll/commentAll?id=' + this.data.id + '&type=1',
-    })
-  },
   // 默认配送地址
   async getUserAddress() {
    const {code,data} = await fetch.getUserAddress({
@@ -257,7 +197,6 @@ Page({
         address: data[0]
       }) 
     }
-    (!data.length && wx.getStorageSync('type')!=1) && this.getCity()
   },
   toSelAddress() {
     wx.navigateTo({
@@ -269,35 +208,6 @@ Page({
       showSpecifications: false
     })
   },
-  // 获取当前城市信息
-  getCity() {
-    let that = this
-    wx.getLocation({
-      type: 'wgs84',
-      success(res) {
-        wx.setStorageSync('latitude', res.latitude)
-        wx.setStorageSync('longitude', res.longitude)
-        var qqmapsdk = new QQMapWX({
-          key: app.globalData.key
-        });
-
-        qqmapsdk.reverseGeocoder({
-          location: {
-            latitude: res.latitude,
-            longitude: res.longitude
-          },
-          success(res) {
-            that.setData({
-              city: res.result.address_component.province + '  ' + res.result.address_component.city
-            })
-          },
-          fail: function (info) {
-            console.log(info)
-          }
-        })
-      }
-    })
-  },
 
   onLoad: function (options) {
     this.setData({
@@ -305,7 +215,6 @@ Page({
     })
     this.getSpecs()
     this.loadDetail()
-    // this.loadComments()
     if (wx.getStorageSync('USERINFO').token) {
       this.getUserAddress()
     }
@@ -318,9 +227,6 @@ Page({
     }
   },
   onReady: function () {
-    if (!wx.getStorageSync('USERINFO').token) {
-      this.getCity()
-    }
     wx.getSystemInfo({
       success: (result) => {
         this.setData({windowHeight:result.windowHeight})
@@ -328,9 +234,4 @@ Page({
     })
   },
 
-  // 监听页面滚动
-  onPageScroll: function (e) {
-    let scrollTop = e.scrollTop
-    this.showNav(scrollTop, 280)
-  }
 })

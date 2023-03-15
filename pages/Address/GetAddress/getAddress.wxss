@@ -61,7 +61,7 @@
 }
 
 .check.active {
-  background-color: #B7312A;
+  background-color: #299f92;
 }
 
 .btn {

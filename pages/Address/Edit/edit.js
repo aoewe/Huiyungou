@@ -1,7 +1,6 @@
 const fetch = require("../../../utils/reques").default
-// import des from '../../../utils/code'
-// const chooseLocation = requirePlugin('chooseLocation');
-// var QQMapWX = require('../../../utils/qqmap-wx-jssdk.min')
+const chooseLocation = requirePlugin('chooseLocation');
+var QQMapWX = require('../../../utils/qqmap-wx-jssdk.min')
 const app = getApp()
 Page({
   data: {
@@ -109,17 +108,16 @@ Page({
   },
   // 地图选点
   topMao() {
-    const key = app.globalData.key
     const referer = 'stzs';
     wx.navigateTo({
-      url: 'plugin://chooseLocation/index?key=' + 'YFYBZ-GKSCJ-XHGFW-KKLDZ-2SVTQ-EHFYZ' + '&referer=' + referer
+      url: 'plugin://chooseLocation/index?key=' + 'BNRBZ-L4VEJ-Y4UFT-FYO2A-CUNBO-COBEO' + '&referer=' + referer
     })
   },
   // 获取省,区code
   getCode(district) {
     let that = this
     var qqmapsdk = new QQMapWX({
-      key: app.globalData.key
+      key: 'BNRBZ-L4VEJ-Y4UFT-FYO2A-CUNBO-COBEO'
     })
     qqmapsdk.search({
       keyword: district,

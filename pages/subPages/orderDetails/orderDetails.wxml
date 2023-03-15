@@ -1,0 +1,82 @@
+<wxs module="m2">
+  var toFloat = function(num){
+    return parseFloat(num)
+  }
+  module.exports.toFloat = toFloat;
+</wxs>
+<view class="nav-bar" style="margin-top:{{statusbar.top}}px;height: {{statusbar.height}}px;">
+  <view class="col" bindtap="back">
+    <van-icon name="arrow-left" />
+  </view>
+  <view wx:if="{{orderInfo.order_status===0}}" class="await">
+    <text>等待买家付款</text>
+    <text>剩{{time}}分自动关闭</text>
+  </view>
+  <view wx:if="{{orderInfo.order_status===4}}">交易关闭</view>
+  <view wx:if="{{orderInfo.order_status===3}}">买家已签收</view>
+  <view wx:if="{{orderInfo.order_status===2}}">卖家已发货</view>
+  <view wx:if="{{orderInfo.order_status===1}}">等待卖家发货</view>
+  <view class="col"></view>
+</view>
+<view class="detail">
+  <!-- <view wx:if="{{orderInfo.order_status===2}}" class="user-info">
+    <image src="/static/imgs/yls.png"></image>
+        <image src="/static/imgs/ysz.png"></image>
+    <image src="/static/imgs/dqz.png"></image>
+    <view>
+      <view class="name-phone"><text class="user-name">{{orderInfo.express_status}}</text></view>
+      <view class="detailed-address">{{orderInfo.express_detail.context}}</view>
+    </view>
+    <van-button data-id="{{item.id}}" catchtap="toLogistics" round>查看物流</van-button>
+  </view> -->
+  <!-- <view wx:if="{{orderInfo.order_status===3}}" class="user-info">
+    <image src="/static/imgs/ycs.png"></image>
+    <view>
+      <view class="name-phone"><text class="user-name">已签收</text></view>
+      <view class="address">{{orderInfo.shipping_user}}</view>
+    </view>
+    <van-button data-id="{{item.id}}" catchtap="toLogistics" round>查看物流</van-button>
+  </view> -->
+  <view wx:if="{{orderInfo.order_status!==3}}" class="user-info">
+    <image src="/static/imgs/orderdw.png"></image>
+    <view>
+      <view class="name-phone">
+        <text class="user-name">{{orderInfo.shipping_user}}</text>
+        <text class="phone">{{orderInfo.username}}</text>
+      </view>
+      <view class="detailed-address">{{orderInfo.address}}</view>
+    </view>
+  </view>
+  <view wx:if="{{orderInfo.order_status===4}}" class="user-info">
+    <image src="/static/imgs/jygb.png"></image>
+    <view>
+      <view class="name-phone"><text class="user-name">交易已关闭</text></view>
+      <view class="detailed-address">这件不合心意，一定会有更合心意的宝贝</view>
+    </view>
+  </view>
+  <view class="commodity-info">
+    <view class="info">
+      <image src="{{orderInfo.product_info[0].good_img}}"></image>
+      <view class="title-price">
+        <view><text class="commodity-name">{{orderInfo.product_info[0].good_name}}</text><text>{{m2.toFloat(orderInfo.product_info[0].good_price)}}</text></view>
+        <view><text>{{orderInfo.product_info[0].good_attr[0].value}}</text><text>x{{orderInfo.product_info[0].buy_cnt}}</text></view>
+      </view>
+      <!-- <van-button wx:if="{{orderInfo.order_status===0&&orderInfo.pay_status!==0}}" round class="refund" catchtap="applyRefund">退款</van-button> -->
+    </view>
+    <view class="payment">
+      <text class="payment-money p-l">价格</text>
+      <view><text>{{m2.toFloat(orderInfo.payment_money)}}</text></view>
+    </view>
+  </view>
+  <view class="order-info">
+    <text class="title">订单信息</text>
+    <view>
+      <text>订单编号：{{orderInfo.order_sn}}</text>
+      <text wx:if="{{orderInfo.three_order_sn}}">交易号：{{orderInfo.three_order_sn}}</text>
+      <text>创建时间：{{orderInfo.create_time}}</text>
+      <text wx:if="{{orderInfo.order_status===1 || orderInfo.order_status===3}}">付款时间：{{orderInfo.pay_time}}</text>
+      <text wx:if="{{orderInfo.order_status===2 || orderInfo.order_status===3}}">发货时间：{{orderInfo.shipping_time}}</text>
+      <text wx:if="{{orderInfo.remarks}}">订单备注：{{orderInfo.remarks}}</text>
+    </view>
+  </view>
+</view>
