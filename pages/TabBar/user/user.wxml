@@ -1,8 +1,8 @@
 <view>
   <image class="cont-top" src="/static/icons/mybackage.png"></image>
-  <view class="head-top" style="color: #ffff;font-weight: normal;">我的</view>
-  <view class="head-flex">
-    <image class="head-picture" src="{{UserInfo.avatar}}" />
+  <view class="top-title" style="top:{{statusBar.top}}px;">我的</view>
+  <view class="head-flex" style="padding-top: {{statusBar.top+statusBar.height+24}}px;">
+    <van-image round custom-class="head-picture" src="{{UserInfo.avatar}}" />
     <view>
       <view class="head-txt">{{UserInfo.username}}</view>
       <view class="head-txt" style="font-size: 29rpx;">会员号：{{UserInfo.uuid}}</view>
@@ -14,22 +14,20 @@
       </view>
     </navigator>
     <view class="order-icon">
-    <navigator hover-class="none" url="{{item.url}}" class="item" wx:for="{{orderIcon}}" wx:key="index">
-      <image src="{{item.img}}"></image>
-      <text>{{item.lable}}</text>
-    </navigator>
-  </view>
+      <navigator hover-class="none" url="{{item.url}}" class="item" wx:for="{{orderIcon}}" wx:key="index">
+        <image src="{{item.img}}"></image>
+        <text>{{item.lable}}</text>
+      </navigator>
+    </view>
   </view>
   <view class="conter">
     <view class="cont-txt">服务与工具</view>
     <view class="order-icon">
-    <navigator hover-class="none" url="{{item.url}}" class="item top" wx:for="{{contIcon}}" wx:key="index">
-      <image src="{{item.img}}"></image>
-      <text>{{item.lable}}</text>
-    </navigator>
+      <navigator hover-class="none" url="{{item.url}}" class="item top" wx:for="{{contIcon}}" wx:key="index">
+        <image src="{{item.img}}"></image>
+        <text>{{item.lable}}</text>
+      </navigator>
+    </view>
   </view>
-  </view>
-
   <button class="isbotton" bindtap="exit">退出登录</button>
-  
 </view>

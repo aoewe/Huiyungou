@@ -1,66 +1,57 @@
-// pages/Transfer/transfer.js
+const api = require('../../../utils/reques').default
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    type: '',
+    list: [],
+    total: 0,
+    page: 1,
+    size: 10,
+    loading: true
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  async getStreamList() {
+    const {
+      type,
+      page,
+      size
+    } = this.data
+    const params = {
+      type,
+      page,
+      size: 1
+    }
+    type == 2 && (params.stream_type = 4)
+    const {
+      code,
+      data
+    } = await api.getStreamList(params)
+    if (code === 0) {
+      this.data.list.push(...data.list)
+      this.setData({
+        list: this.data.list,
+        page: ++this.data.page,
+        loading: false,
+        total: data.total
+      })
+    }
+  },
   onLoad(options) {
-
+    wx.setNavigationBarTitle({
+      title: options.type == 2 ? '转赠记录' : '兑换记录',
+    })
+    this.setData({
+      type: options.type
+    }, () => {
+      this.getStreamList()
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    if (this.data.list.length === this.data.total) return
+    this.setData({
+      loading: true
+    })
+    this.getStreamList()
   }
 })

@@ -11,6 +11,7 @@ const api = {
   gethomeproduct: `${apiurl}/app/homePage/product`, //首页产品
   extension: `${apiurl}/app/homePage/extension`, //首页推广
   getProductList: `${apiurl}/app/product/getproductlist`, //产品列表
+  transferIntegral: `${apiurl}/app/Capital/transferIntegral`, //产品列表
   getProductdetail: `${apiurl}/app/product/getProductdetail`, //产品详情
   getsku: `${apiurl}/app/product/getSKU`, //产品规格
   getWineComments: `${apiurl}/app/product/getComments`, //获取相关评论

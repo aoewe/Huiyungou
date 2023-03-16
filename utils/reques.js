@@ -235,6 +235,12 @@ const editHeadImg = data => {
     resolve(request(api.editHeadImg, 'post', data));
   });
 };
+// 积分转让or积分兑换拼券积分
+const transferIntegral = data => {
+  return new Promise((resolve, reject) => {
+    resolve(request(api.transferIntegral, 'post', data));
+  });
+};
 // 修改用户信息
 const editUser = data => {
   return new Promise((resolve, reject) => {
@@ -394,6 +400,7 @@ export default {
   getSKU,
   getProductdetail,
   getProductList,
+  transferIntegral,
   extension,
   getHomeProduct,
   setUserOpinion,

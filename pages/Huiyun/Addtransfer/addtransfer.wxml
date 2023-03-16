@@ -1,28 +1,29 @@
-<!-- 添加转赠 -->
-
 <view>
   <image class="cont-top" src="/static/icons/Withdrawalb.png"></image>
   <view class="top">
-  <navigator open-type="navigateBack"><van-icon name="arrow-left" /></navigator>
-  <view>转赠</view>
-<view class="block" style="text-align: end;" ></view>
-</view>
-<view class="flex">
-<view class="Mymoney">我的余额（元）</view>
-<navigator url="../TransferRecord/transfer">转赠记录</navigator>
-</view>
-<view class="money">¥<text>879.00</text></view>
-<view class="cont-block">
-  <view class="b-drawal">提现金额</view>
-  <view class="withdrawal">
-  <text class="">¥</text><input style="height: 90rpx;margin-left: 20rpx;" type="digit" auto-focus />
-</view>
-<view class="b-bank">
-  <view>提现金额</view>
-</view>
-<input  style="margin: 0rpx 40rpx;" placeholder="请输入到账账户（会员编号）"/>
-<view class="btn">
-    <van-button color="#2A9F93" bindtap="register" size="round" round custom-class="external-class">提交</van-button>
+    <navigator hover-class="none" open-type="navigateBack">
+      <van-icon name="arrow-left" />
+    </navigator>
+    <view>转赠</view>
+    <view class="block" style="text-align: end;"></view>
+  </view>
+  <view class="flex">
+    <view class="Mymoney">我的积分</view>
+    <navigator url="../TransferRecord/transfer?type=2">转赠记录</navigator>
+  </view>
+  <view class="integral">{{userInfo.integral || 0}}</view>
+  <view class="cont-block">
+    <view class="b-drawal">提现金额</view>
+    <view class="withdrawal">
+      <text class="">¥</text><input model:value="{{integral}}" maxlength="{{userInfo.integral.length}}" bindinput="changeIntegral" placeholder-style="font-size:36rpx" placeholder="请输入转赠数量" style="height: 90rpx;margin-left: 20rpx;" type="digit" auto-focus />
+    </view>
+    <view class="b-bank">
+      <view>提现金额</view>
+    </view>
+    <input model:value="{{to_user}}" style="margin: 0rpx 40rpx;" placeholder="请输入到账账户（会员编号）" />
+    <view class="btn">
+      <van-button color="#2A9F93" bindtap="register" size="round" round custom-class="external-class">提交</van-button>
+    </view>
   </view>
 </view>
-</view>
+<password-input show="{{showPassword}}" top="{{0}}" payPrice="{{info.payment_money}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>

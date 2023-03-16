@@ -13,13 +13,15 @@ page {
 }
 /* 背景图 */
 
-.head-top {
-  font-size: 58rpx;
-  font-family: PingFang SC;
+.header{
+  position: fixed;
+  font-size: 60rpx;
+  width: 100%;
   font-weight: bold;
   color: #1D1D1D;
-  padding: 34rpx 28rpx;
-  padding-top: 95rpx;
+  padding-left: 28rpx;
+  background-color: #F3F5F7;
+  z-index: 99;
 }
 .no-content {
   position: absolute;

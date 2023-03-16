@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "复购专区"
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index"
+  },
+  "navigationBarTitleText": ""
 }

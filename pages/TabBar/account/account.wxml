@@ -1,18 +1,16 @@
-<view>
-  <view class="head-top fleex">
-    <view>账户</view>
-    <image class="head-pict" src="" />
-  </view>
-  <swiper indicator-dots="{{false}}" duration="{{duration}}" previous-margin="60rpx" next-margin="60rpx" circular bindchange="bindchange">
+<wxs src="../../../utils/comm.wxs" module="comm"></wxs>
+<view class="top">
+  <view class="header" style="padding-top:{{statusBar.top}}px">账户</view>
+  <view style="height: 102px;"></view>
+  <swiper indicator-dots="{{false}}" duration="{{duration}}" previous-margin="50rpx" next-margin="50rpx" circular bindchange="bindchange">
     <block wx:for="{{orderIcon}}" wx:key="index">
       <swiper-item class="swiper-item">
-        <view class="{{swiperIndex == index ? 'active' : 'quiet'}}">
+        <view class="sw-box {{swiperIndex == index ? 'active' : 'quiet'}}">
           <image class="sw-img" style="background-color:{{item.color}}" src="{{item.img}}" />
           <view>
             <view class="top-txt">{{item.type}}</view>
             <view class="m-text">{{item.balance}}</view>
           </view>
-          <view class="link"></view>
           <view class="btn-text">
             <text>账户安全持续保护中</text>
             <view>
@@ -25,32 +23,41 @@
     </block>
   </swiper>
   <view class="indicator">
-    <view wx:for="{{orderIcon}}" class="dot {{index==current ? 'dots' : ''}}"></view>
+    <view wx:for="{{orderIcon}}" class="dot {{index==swiperIndex ? 'dots' : ''}}"></view>
   </view>
   <view class="threeicon">
-    <navigator class="black" url="../../Huiyun/Addtransfer/addtransfer">
+    <navigator hover-class="none" class="black" url="../../Huiyun/Addtransfer/addtransfer">
       <image src="/static/icons/zhuanzeng.png" />
       转赠
     </navigator>
-    <navigator class="black" url="../../Huiyun/AddExchange/exchange">
+    <!-- <navigator class="black" url="../../Huiyun/AddExchange/exchange">
       <image src="/static/icons/exchange.png" />
       兑换
-    </navigator>
-    <navigator class="black" url="../../Huiyun/AddWithdrawal/withdrawal">
+    </navigator> -->
+    <navigator hover-class="none" class="black" url="../../Huiyun/AddWithdrawal/withdrawal">
       <image src="/static/icons/Cash.png" />
       提现
     </navigator>
   </view>
+</view>
+<view style="height: 352px;"></view>
+<view class="card-box" style="min-height: {{statusBar.top+statusBar.height+222}}px;">
   <view class="query">明细查询</view>
-  <view class="cont-query">
+  <view class="cont-query" wx:for="{{cardInfo}}" wx:key="index">
     <view>
       <view class="cont-img">
         <image src="/static/icons/zrmoney.png" />
         消费
       </view>
-      <view class="cont-t">说明：认购扣除[588]</view>
-      <view class="cont-t">2023-03-03 09:56:35</view>
+      <view class="cont-t">说明：{{item.explain}}</view>
+      <view class="cont-t">{{comm.formatDate(item.create_time)}}</view>
     </view>
-    <view class="cont-x">-1000</view>
+    <view class="cont-x">{{item.after_balance}}</view>
+  </view>
+  <view class="loading" wx:if="{{cardLoading}}">
+    <van-loading type="spinner"></van-loading>
+  </view>
+  <view class="empty" wx:if="{{!cardLoading && !cardInfo.length}}">
+    <image src="../../../static/imgs/nocontent.png"></image>
   </view>
 </view>

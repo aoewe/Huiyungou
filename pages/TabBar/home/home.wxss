@@ -10,16 +10,6 @@
 .banner-img image{
   border-radius: 16rpx;
 }
-.header{
-  position: fixed;
-  font-size: 60rpx;
-  width: 100%;
-  font-weight: bold;
-  color: #1D1D1D;
-  padding-left: 28rpx;
-  background-color: #F3F5F7;
-  z-index: 99;
-}
 .Cent-Sp {
   width: 95%;
   margin: auto;

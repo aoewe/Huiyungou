@@ -7,10 +7,18 @@
   height: 114rpx;
   background: #999999;
   border: 3px solid #FFFFFF;
-  border-radius: 50%;
   margin-left: 28rpx;
 }
-
+.top-title{
+  position: absolute;
+  font-size: 48rpx;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-left: 28rpx;
+}
+.header{
+  position: static;
+}
 .head-flex {
   display: flex;
   align-items: center;

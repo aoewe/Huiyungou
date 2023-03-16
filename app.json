@@ -6,6 +6,7 @@
     "pages/TabBar/account/account",
     "pages/Register/register",
     "pages/Serve-Tool/Set/set",
+    "pages/Serve-Tool/Invite/invite",
     "pages/Serve-Tool/Bankcard/Banklist/banklist",
     "pages/Serve-Tool/SwitchAccount/swacc",
     "pages/Serve-Tool/Headimg/Headimg",
@@ -22,7 +23,6 @@
     "pages/Product/details/details",
     "pages/Address/Edit/edit",
     "pages/Address/GetAddress/getAddress",
-    "pages/Invite/invite",
     "pages/Huiyun/Addtransfer/addtransfer",
     "pages/Huiyun/AddExchange/exchange",
     "pages/Huiyun/ExchangeRecord/ExchangeR"
@@ -84,6 +84,7 @@
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
+    "van-loading": "@vant/weapp/loading/index",
     "van-icon": "@vant/weapp/icon/index"
   }
 }

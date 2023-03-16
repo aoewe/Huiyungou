@@ -1,5 +1,10 @@
 @import '../AddWithdrawal/withdrawal.wxss';
-
+.integral{
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #ffffff;
+  padding-left: 26rpx;
+}
 .cont-block {
   height: 589rpx;
 }

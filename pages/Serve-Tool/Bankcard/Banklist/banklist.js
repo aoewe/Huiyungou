@@ -1,10 +1,6 @@
 const api = require('../../../../utils/reques').default
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
   list:[],
   },

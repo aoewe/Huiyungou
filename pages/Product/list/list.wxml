@@ -1,8 +1,16 @@
-<!--pages/Productlist/list.wxml-->
 <view class="product-list">
-  <navigator wx:for="{{products}}" wx:key="id" class="product-item"  url="{{'../details/details?id='+item.id}}">
+  <navigator wx:for="{{products}}" wx:key="id" class="product-item" url="{{'../details/details?id='+item.id}}">
     <image src="{{item.main_pic}}" mode="aspectFill" class="product-image" />
-    <view class="product-name">{{item.product_name}}</view>
-    <text class="textone">¥<text class="texttow">{{item.price}}</text></text>
+    <view class="info">
+      <view class="ellipsis-text">{{item.product_name}}</view>
+      <text class="textone">¥<text class="texttow">{{item.price}}</text></text>
+    </view>
   </navigator>
+</view>
+<view class="loading">
+  <van-loading type="spinner" wx:if="{{loading}}"></van-loading>
+  <text wx:if="{{products.length===total && products.length>5}}">已全部加载</text>
+</view>
+<view class="no-content" wx:if="{{!loading && !products.length}}">
+  <image src="../../../static/imgs/nocontent.png"></image>
 </view>

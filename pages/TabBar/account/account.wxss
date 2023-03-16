@@ -1,12 +1,23 @@
-/* pages/account/account.wxss */
-
+.top{
+  position: fixed;
+  width: 100%;
+  background-color: #F3F5F7;
+}
 .fleex {
   font-weight: normal;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
+swiper{
+  height: 169px;
+  display: flex;
+  align-items: center;
+}
+.swiper-item{
+  width: 650rpx;
+  height: 169px;
+}
 .head-pict {
   margin-top: 30rpx;
   width: 64rpx;
@@ -14,10 +25,16 @@
   background: #D4ECE9;
   border-radius: 50%;
 }
+.sw-box{
+  height: 169px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .sw-img {
   width: 100%;
-  height: 320rpx;
+  height: 100%;
   background: #DDDDDD;
   border-radius: 16rpx;
   position: absolute;
@@ -26,20 +43,20 @@
 }
 
 .active {
-  transform: scale(1.1);
+  transform: none;
   transition: all 0.2s ease-in 0s;
 }
 
 .quiet {
-  transform: scale(0.9);
+  transform: scale(0.92);
   transition: all 0.2s ease-in 0s;
 }
 
 .top-txt {
   width: 200rpx;
   height: 50rpx;
-  padding-top: 40rpx;
-  padding-left: 65rpx;
+  padding-top: 60rpx;
+  padding-left: 32rpx;
   text-align: left;
   font-size: 36rpx;
   font-family: PingFang SC;
@@ -49,7 +66,7 @@
 
 .m-text {
   padding-top: 10rpx;
-  padding-left: 65rpx;
+  padding-left: 32rpx;
   text-align: left;
   width: 280rpx;
   height: 69rpx;
@@ -63,6 +80,7 @@
   display: flex;
   justify-content: center;
   margin-top: 20rpx;
+  height: 8rpx;
 }
 
 .link {
@@ -92,23 +110,34 @@
 }
 
 .btn-text {
+  height: 86rpx;
+  padding: 0 32rpx;
   display: flex;
+  align-items: center;
+  position: relative;
   justify-content: space-between;
-  font-size: 24rpx;
-  font-family: PingFang SC;
-  font-weight: 400;
   color: #FFFFFF;
-  margin: 10rpx 50rpx;
+  font-size: 24rpx;
 }
-
+.btn-text::after{
+  height: 1px;
+  width: 594rpx;
+  background-color: #eeeeee;
+  content: '';
+  position: absolute;
+  top: 0;
+}
 .threeicon {
   margin: 20rpx auto;
   display: flex;
+  justify-content: space-between;
+  padding: 16rpx 0;
+  box-sizing: border-box;
+  border-radius: 12rpx;
   width: 650rpx;
   height: 132rpx;
   background: #FFFFFF;
 }
-
 .threeicon image {
   margin-right: 10rpx;
   width: 68rpx;
@@ -119,9 +148,12 @@
 .black {
   display: flex;
   align-items: center;
-  padding: 0rpx 35rpx;
+  flex: 1;
+  justify-content: center;
 }
-
+.black:first-child{
+  border-right: 1px solid #eeeeee;
+}
 .query {
   margin: 0rpx 52rpx;
   margin-top: 60rpx;
@@ -133,13 +165,13 @@
 
 .cont-query {
   margin: 20rpx auto;
-  padding: 0rpx 20rpx;
+  padding: 24rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 650rpx;
-  height: 172rpx;
   background: #FFFFFF;
+  border-radius: 12rpx;
 }
 
 .cont-img {
@@ -149,6 +181,7 @@
   font-weight: 500;
   color: #333333;
   align-items: center;
+  padding-bottom: 6rpx;
 }
 
 .cont-query image {
@@ -164,10 +197,26 @@
   font-weight: 500;
   color: #666666;
 }
-
+.cont-t+.cont-t{
+  padding-top: 6rpx;
+}
 .cont-x {
   font-size: 36rpx;
   font-family: PingFang SC;
   font-weight: bold;
   color: #333333;
+}
+.card-box{
+  padding-bottom: 20rpx;
+  position: relative;
+}
+.empty{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.empty image{
+  height: 288rpx;
+  width: 392rpx;
 }

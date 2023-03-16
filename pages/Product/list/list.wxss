@@ -1,5 +1,11 @@
 /* pages/Productlist/list.wxss */
 
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 28rpx;
+}
 
 .product-item {
   width: 336rpx;

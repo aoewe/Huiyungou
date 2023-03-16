@@ -1,35 +1,43 @@
-// pages/Productlist/list.js
 const api = require('../../../utils/reques').default
-
 Page({
-
   data: {
-    products:[],
+    category_id:null,
+    products: [],
+    total: 0,
+    loading: true,
+    size:1,
+    page:1
   },
-
-  onLoad(options) {
-    let category_id = options.id
-    this.Getlist(category_id)
-  },
-
-  onShow() {
-
-  },
-
-  async Getlist(e) {
-    const params = {
-      category_id:e
-    }
-    console.log(params);
-
-    const res = await api.getProductList(params)
-    if (res.code === 0) {
-      const {
-        list
-      } = res.data
-      this.setData ({
-        products:list
+  async Getlist() {
+    const { category_id,page,size } = this.data
+    const params = { category_id,page,size }
+    const { code, data } = await api.getProductList(params)
+    if (code === 0) {
+      this.data.products.push(...data.list)
+      this.setData({
+        products: this.data.products,
+        total: data.total,
+        page: ++this.data.page,
+        loading: false
       })
     }
+  },
+  onLoad(options) {
+    const type = options.id
+    wx.setNavigationBarTitle({
+      title: type==1?'复购专区':type==2?'VIP专区':type==3?'团购专区':'拼券专区',
+    })
+    this.setData({
+      category_id:type || null
+    },()=>{
+      this.Getlist()
+    })
+  },
+  onReachBottom() {
+    if (this.data.products.length === this.data.total) return
+    this.setData({
+      loading: true
+    })
+    this.Getlist()
   }
 })
