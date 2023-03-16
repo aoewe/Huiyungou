@@ -5,7 +5,7 @@
   <swiper indicator-dots="{{false}}" duration="{{duration}}" previous-margin="50rpx" next-margin="50rpx" circular bindchange="bindchange">
     <block wx:for="{{orderIcon}}" wx:key="index">
       <swiper-item class="swiper-item">
-        <view class="sw-box {{swiperIndex == index ? 'active' : 'quiet'}}">
+        <navigator url="../../Reward/reward" class="sw-box {{swiperIndex == index ? 'active' : 'quiet'}}">
           <image class="sw-img" style="background-color:{{item.color}}" src="{{item.img}}" />
           <view>
             <view class="top-txt">{{item.type}}</view>
@@ -18,7 +18,7 @@
               <van-icon name="arrow" />
             </view>
           </view>
-        </view>
+        </navigator>
       </swiper-item>
     </block>
   </swiper>

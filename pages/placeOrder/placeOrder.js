@@ -51,7 +51,7 @@ Page({
       })
       let timer = setTimeout(()=>{
         wx.redirectTo({
-          url: `../orderDetails/orderDetails?id=${this.data.order_id}`,
+          url: `../subPages/orderDetails/orderDetails?id=${this.data.order_id}`,
         })
         clearTimeout(timer)
       },500)

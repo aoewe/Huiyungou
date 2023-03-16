@@ -1,66 +1,28 @@
-// pages/Reward/reward.js
+const api = require('../../utils/reques').default
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    statusBar: wx.getMenuButtonBoundingClientRect(),
+    page: 1,
+    size: 10,
+    loading: true,
+    list: [],
+    total: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  async getRewardIntegral() {
+    const {page,size} = this.data
+    const {code, data} = await api.getRewardIntegral({ page, size })
+    if (code === 0) {
+      this.setData({
+        loading: false,
+        list: this.data.list,
+        page: ++this.data.page,
+        total: data.total
+      })
+    }
+  },
   onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    this.getRewardIntegral()
   }
 })

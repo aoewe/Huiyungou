@@ -26,4 +26,4 @@
     </view>
   </view>
 </view>
-<password-input show="{{showPassword}}" top="{{0}}" payPrice="{{info.payment_money}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>
+<password-input show="{{showPassword}}" top="{{0}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>

@@ -1,18 +1,17 @@
+const api = require('../../utils/reques').default
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
     payPrice: String,
+    info:{},
     type:1,
+    popupType:0,
     top:0,
     show:false
   },
-
-  /**
-   * 组件的初始数据
-   */
+  
   data: {
+    buy_number:1,
+    takeNotes:{},
     statusBar: wx.getMenuButtonBoundingClientRect(),
     codeList: [],
     bottom: wx.getStorageSync('bottom'),
@@ -48,11 +47,13 @@ Component({
     inputFocus4: false,
     inputFocus5: false,
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
+    async readyDealOrder(){
+      const {code,data} = await api.readyDealOrder({deal_round_id:this.properties.info.deal_info.id})
+      if(code===0){
+        this.setData({takeNotes:data})
+      }
+    },
     closePay() {
       this.triggerEvent('closePay')
     },
@@ -67,11 +68,13 @@ Component({
     addOne(e) {
       if (e.currentTarget.dataset.num != '') {
         let arr = this.data.codeList
+        if(arr.length===6) return
         arr.push(e.currentTarget.dataset.num)
         this.setData({
           codeList: arr
         })
       }
+      if(this.properties.popupType===1) return
       if (this.data.codeList.length == 6) {
         this.triggerEvent('payOrderNext', this.data.codeList.join(''))
       }
@@ -147,5 +150,21 @@ Component({
         this.triggerEvent('payOrderNext', this.data.codeList.join(''))
       }
     },
-  }
+    onSubmit(){
+      this.triggerEvent('payOrderNext', {paw:this.data.codeList.join('').slice(0,6),buy_number:this.data.buy_number})
+    },
+    onChange(event) {
+      const num = (this.properties.info.deal_info.max_number-this.data.takeNotes.buy_sum_number)
+      this.setData({
+        buy_number:event.detail>num?num:event.detail
+      })
+    },
+  },
+  lifetimes: {
+    attached: function() {
+      if(this.properties.popupType===1){
+        this.readyDealOrder()
+      }
+    }
+  },
 })

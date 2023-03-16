@@ -2,13 +2,16 @@
 
 .conter {
   display: flex;
-  width: 95%;
+  width: 694rpx;
   margin: 30rpx auto;
   height: 210rpx;
   position: relative;
+  justify-content: space-between;
 }
-
-image {
+.left{
+  display: flex;
+}
+.item-bg {
   position: absolute;
   display: block;
   width: 698rpx;
@@ -33,12 +36,11 @@ image {
 
 .tow {
   font-size: 24rpx;
-  font-family: PingFang SC;
   font-weight: 500;
   color: #FFFFFF;
 }
 
-text {
+.text {
   font-size: 24rpx;
   font-family: PingFang SC;
   font-weight: 500;
@@ -46,22 +48,24 @@ text {
   margin-right: 20rpx;
 }
 
-.left {
+.right {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 40rpx 0rpx;
-  margin-left: 80rpx;
-  text-align: center;
+  width: 154rpx;
 }
 
-.left .go {
+.right .go {
   font-size: 28rpx;
   font-family: PingFang SC;
   font-weight: bold;
   color: #FF2A48;
 }
-
-.left text {
+.right .go+text{
+  padding: 8rpx 0 10rpx;
+}
+.right text {
   font-size: 24rpx;
   font-family: PingFang SC;
   font-weight: 500;
@@ -85,6 +89,20 @@ text {
 
 .time {
   color: #FF2A48;
+  text-align: center;
+  display: flex;
+  font-size: 24rpx;
+}
+.time>view{
+  background-color: #FF2A48;
+  color: #FFFFFF;
+  border-radius: 4rpx;
+  padding: 0 4rpx;
+  font-size: 20rpx;
+  text-align: center;
+  height: 34rpx;
+  line-height: 34rpx;
+  margin: 0 4rpx;
 }
 
 .time text {

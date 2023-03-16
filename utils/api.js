@@ -11,8 +11,9 @@ const api = {
   gethomeproduct: `${apiurl}/app/homePage/product`, //首页产品
   extension: `${apiurl}/app/homePage/extension`, //首页推广
   getProductList: `${apiurl}/app/product/getproductlist`, //产品列表
-  transferIntegral: `${apiurl}/app/Capital/transferIntegral`, //产品列表
+  transferIntegral: `${apiurl}/app/Capital/transferIntegral`, //转让
   getProductdetail: `${apiurl}/app/product/getProductdetail`, //产品详情
+  readyDealOrder: `${apiurl}/app/Deal/readyDealOrder`, //拼券专区订单预备接口
   getsku: `${apiurl}/app/product/getSKU`, //产品规格
   getWineComments: `${apiurl}/app/product/getComments`, //获取相关评论
   getaddorder: `${apiurl}/app/order/addOrder`, //创建订单
@@ -20,6 +21,7 @@ const api = {
   setdefaultaddress: `${apiurl}/app/user/setDefaultAddress`, //设置默认地址
   getUserAddress: `${apiurl}/app/user/getUserAddress`, //获取地址
   deluseraddress: `${apiurl}/app/user/delUserAddress`, //删除地址
+  buyDealOrder: `${apiurl}/app/Deal/buyDealOrder`, //仓单购买
   getUserCapital: `${apiurl}/app/user/getUserCapital`, //用户资产
   payWinOrder: `${apiurl}/app/order/payOrder`, //商品订单支付
   editUser: `${apiurl}/app/user/editUser`, //编辑个人信息

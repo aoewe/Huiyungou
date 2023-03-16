@@ -1,4 +1,6 @@
-<!--pages/Reward/reward.wxml-->
+<navigator hover-class="none" class="back" style="top: {{statusBar.top}}px;" open-type="navigateBack">
+  <van-icon name="arrow-left" />
+</navigator>
 <view>
   <image class="cont-top" style="height: 568rpx;" src="/static/icons/reward.png"></image>
   <view class="text">

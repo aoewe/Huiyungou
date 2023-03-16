@@ -4,6 +4,19 @@ page {
   background: #de2a33;
 }
 
+
+.back{
+  position: fixed;
+  background-color: rgba(0, 0, 0, .3);
+  color: #ffffff;
+  border-radius: 50%;
+  height: 50rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center !important;
+  padding: 0 10rpx !important;
+  left: 24rpx;
+}
 .text {
   display: flex;
   padding-top: 140rpx;

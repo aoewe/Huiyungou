@@ -3,7 +3,7 @@ Page({
   data: {
     statusBar: wx.getMenuButtonBoundingClientRect(),
     articleList: [],
-    showProduct:[],
+    showProduct: [],
     swiperList: [{
       url: ''
     }]
@@ -25,17 +25,17 @@ Page({
         show_product
       } = data
       this.setData({
-        showProduct:show_product,
-        articleList:article,
-        swiperList:banner_list,
+        showProduct: show_product,
+        articleList: article,
+        swiperList: banner_list,
       })
     }
   },
- 
-  GoProductList(e){
-    var id = e.currentTarget.dataset.id;
-  wx.navigateTo({
-    url: '/pages/Product/list/list?id=' + id,
-  })
+
+  GoProductList(e) {
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/Product/list/list?id=' + id,
+    })
   }
 })

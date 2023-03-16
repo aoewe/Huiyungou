@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText":"拼券专区"
+  "usingComponents": {
+    "password-input": "/components/password/password"
+  },
+  "navigationBarTitleText": "拼券专区",
+  "navigationBarBackgroundColor": "#f3f5f7"
 }

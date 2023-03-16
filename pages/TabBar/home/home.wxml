@@ -15,7 +15,9 @@
     </view>
     <view>
       <image class="Sp-img" src="/static/icons/Special2.png" bindtap="GoProductList" data-id="{{2}}" />
-      <image class="Sp-img" src="/static/icons/Special3.png" bindtap="GoProductList" data-id="{{4}}" />
+      <navigator hover-class="none" url="../../Coupons/Special/Special">
+        <image class="Sp-img" src="/static/icons/Special3.png" />
+      </navigator>
     </view>
   </view>
   <view class="shopping">商 · 品 · 展 · 示</view>

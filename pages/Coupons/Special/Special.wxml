@@ -1,20 +1,35 @@
-<!--pages/Coupons/Special/Special.wxml-->
+<wxs src="../../../utils/comm.wxs" module="comm"></wxs>
 <view>
-  <view class="conter" wx:for="{{DealInfo}}" wx:key="index">
-    <image src="/static/icons/coupons.png"/>
-    <view class="c-te">{{item.name}}.</view>
-    <view style="margin: 30rpx 0rpx;">
-      <view class="one">{{item.content}}</view>
-      <view  class="tow">开始时间：{{item.deal_info.begin_time}}</view>
-      <view  class="tow">结束时间：{{item.deal_info.end_time}}</view>
-      <text>最大购买：{{item.deal_info.max_number}}</text><text>最小购买：{{item.deal_info.min_number}}</text>
-    </view>
+  <view class="conter" wx:for="{{list}}" wx:key="index">
+    <image class="item-bg" src="/static/icons/coupons.png" />
     <view class="left">
+      <view class="c-te">{{item.name}}.</view>
+      <view style="margin: 30rpx 0rpx;">
+        <view class="one">{{item.content}}</view>
+        <view class="tow">开始时间：{{comm.formatDate(item.deal_info.begin_time)}}</view>
+        <view class="tow">结束时间：{{comm.formatDate(item.deal_info.end_time)}}</view>
+        <text class="text">最大购买：{{item.deal_info.max_number}}</text><text class="text">最小购买：{{item.deal_info.min_number}}</text>
+      </view>
+    </view>
+
+    <view class="right">
       <view class="go" wx:if="{{item.deal_info.status === 0}}">未开始</view>
-      <view class="start" wx:if="{{item.deal_info.status === 1}}">开启中</view>
+      <view class="start" bindtap="goPay" data-index="{{index}}" wx:if="{{item.deal_info.status === 1}}">立即抢购</view>
       <view class="go" wx:if="{{item.deal_info.status === 2}}">已结束</view>
-      <text wx:if="{{item.deal_info.status === 0}}">距开始</text>
-      <view wx:if="{{item.deal_info.status === 0}}" class="time"><text>13</text>:<text>14</text>:<text>00</text></view>
+      <text class="text" wx:if="{{item.deal_info.status === 0}}">距开始{{item.day>=1?item.day+'天':''}}</text>
+      <view wx:if="{{item.deal_info.status === 0}}" class="time">
+        <view>{{item.hour}}</view>:
+        <view>{{item.minute}}</view>:
+        <view>{{item.second}}</view>
+      </view>
     </view>
   </view>
 </view>
+<view class="loading">
+  <van-loading type="spinner" wx:if="{{loading}}"></van-loading>
+  <text wx:if="{{list.length===total && list.length>5}}">已全部加载</text>
+</view>
+<view class="no-content" wx:if="{{!loading && !list.length}}">
+  <image src="../../../static/imgs/nocontent.png"></image>
+</view>
+<password-input wx:if="{{showPassword}}" show="{{showPassword}}" popupType="{{1}}" info="{{info}}" top="{{0}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>

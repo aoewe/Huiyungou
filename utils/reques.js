@@ -350,12 +350,24 @@ const getRewardIntegral = data => {
     resolve(request(api.getRewardIntegral, 'post', data));
   });
 };
+const readyDealOrder = data => {
+  return new Promise((resolve, reject) => {
+    resolve(request(api.readyDealOrder, 'post', data));
+  });
+};
+const buyDealOrder = data => {
+  return new Promise((resolve, reject) => {
+    resolve(request(api.buyDealOrder, 'post', data));
+  });
+};
 
 
 export default {
   checkRecommend,
+  buyDealOrder,
   confirmOrder,
   getShareImg,
+  readyDealOrder,
   getFansList,
   getWinOrderInfo,
   getArticleInfo,
