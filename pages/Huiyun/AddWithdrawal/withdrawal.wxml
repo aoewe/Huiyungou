@@ -17,7 +17,7 @@
     <view class="withdrawal">
       <text class="">¥</text><input style="height: 90rpx;margin-left: 20rpx;" type="digit" auto-focus />
     </view>
-    <navigator hover-class="none" url="../../Serve-Tool/Bankcard/Banklist/banklist" class="b-bank">
+    <navigator hover-class="none" url="../../Bankcard/Banklist/banklist?isSel={{true}}" class="b-bank">
       <view>提现至</view>
       <view>建设银行
         <van-icon name="arrow" />
