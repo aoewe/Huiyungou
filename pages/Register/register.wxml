@@ -20,7 +20,7 @@
     <input type="password" placeholder-class="placeholder" model:value="{{password}}" placeholder="输入登陆密码" />
   </view>
   <view class="input">
-    <input type="password" placeholder-class="placeholder" model:value="{{up_uuid}}" placeholder="请输入邀请码" />
+    <input type="text" placeholder-class="placeholder" model:value="{{up_uuid}}" placeholder="请输入邀请码" />
   </view>
   <view class="btn">
     <van-button color="#2A9F93" bindtap="register" size="round" round custom-class="external-class">注册</van-button>

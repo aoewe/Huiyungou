@@ -79,7 +79,7 @@
   display: flex;
   margin: 0rpx 35rpx;
   align-items: center;
-  font-size: 80rpx;
+  font-size: 37rpx !important;
   font-family: PingFang SC;
   font-weight: 500;
   color: #1D1D1D;

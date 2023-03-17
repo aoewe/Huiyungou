@@ -2,20 +2,22 @@ const api = require('../../utils/reques').default
 // const des = require('../../utils/code')
 var timer = null
 var time = 60
+const app = getApp()
+
 Page({
   data: {
     statusBar: wx.getMenuButtonBoundingClientRect(),
     mobile: '',
-    username:'',
+    username: '',
     code: '',
     password: '',
-    up_uuid: '',
-    show:false,
+    up_uuid: '10002',
+    show: false,
+    type: false,
     text: '发送验证码'
   },
   // 发送验证码
   async sendCode() {
-    console.log('========')
     if (timer) return
     const that = this
     if (!/^1[3|4|5|6|7|8|9][0-9]\d{8}$/.test(this.data.mobile)) return wx.showToast({
@@ -27,7 +29,7 @@ Page({
       type: 2
     }
 
-const code =  api.sendcode(params)
+    const code = api.sendcode(params)
     console.log(code);
     if (code === 0) {
       wx.showToast({
@@ -61,24 +63,56 @@ const code =  api.sendcode(params)
   back() {
     wx.navigateBack()
   },
-  async login(params){
+  async login(params) {
     const param = {
-      username:params.username,
-      password:params.password
+      username: params.username,
+      password: params.password
     }
     console.log(param);
 
     const res = await api.login(param)
     if (res.code === 0) {
-      wx.setStorageSync('USERINFO', res.data)
-      wx.showToast({
-        title: '登录成功',
-        icon: 'none'
-      })
-      wx.setStorageSync('type', res.data.type)
-      wx.redirectTo({
-        url: '/pages/TabBar/home/home',
-      })
+      const type = this.data.type
+      if (type === false) {
+        const accounts = wx.getStorageSync('accounts') || [];
+        const existingAccount = accounts.find(account => account.username === res.data.username);
+        if (existingAccount) {
+          console.log('账号已存在');
+        } else {
+          accounts.push(res.data);
+          wx.setStorageSync('accounts', accounts);
+          console.log('账号添加成功');
+        }
+        wx.setStorageSync('USERINFO', res.data)
+        wx.showToast({
+          title: '登录成功',
+          icon: 'none'
+        })
+        wx.setStorageSync('type', res.data.type)
+        wx.switchTab({
+          url: '/pages/TabBar/home/home',
+        })
+      } else {
+        const accounts = wx.getStorageSync('accounts') || [];
+        accounts.push(res.data);
+        wx.setStorageSync('accounts', accounts);
+        console.log('账号添加成功');
+
+        wx.showToast({
+          title: '添加新账号成功',
+          icon: 'none',
+          success: function () {
+            setTimeout(function () {
+              wx.redirectTo({
+                url: '../Serve-Tool/SwitchAccount/swacc',
+              })
+            }, 1500)
+          }
+        })
+      }
+
+
+
     }
   },
 
@@ -128,7 +162,8 @@ const code =  api.sendcode(params)
       let timer = setTimeout(() => {
         this.login({
           username,
-          password})
+          password
+        })
         clearTimeout(timer)
       }, 500)
     } else {
@@ -149,6 +184,9 @@ const code =  api.sendcode(params)
     timer = null
   },
   onLoad(options) {
-
+    this.setData({
+      type: options.type
+    })
+    console.log(options.type);
   }
 })

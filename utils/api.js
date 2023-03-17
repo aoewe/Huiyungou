@@ -45,17 +45,15 @@ const api = {
   getAutoOrderOne: `${apiurl}/app/Deal/getAutoOrderOne`, //预展中心（运营中心/旗下挂单）
   getAutoOrderTwo: `${apiurl}/app/Deal/getAutoOrderTwo`, //预展中心（收购大厅）
   transferExhibits: `${apiurl}/app/Deal/transferExhibits`, //预转展品
-  buyAutoOrder: `${apiurl}/app/Deal/buyAutoOrder`, //一键收购
   getWithdrawalList: `${apiurl}/app/Capital/getWithdrawalList`, //提现记录
   getExhibitsStream: `${apiurl}/app/Capital/getExhibitsStream`, //展品流水
   getDealOrder: `${apiurl}/app/Deal/getDealOrder`, //获取拼券专区仓单购买记录
   checkRealName: `${apiurl}/app/User/checkRealName`, //实名认证
   changeIntegral: `${apiurl}/app/Capital/changeIntegral`, //积分转化
-  getFansList: `${apiurl}/app/User/getFansList`, //粉丝列表
   getArticleList: `${apiurl}/app/user/getArticleList`, //文章列表
   confirmOrder: `${apiurl}/app/order/confirmOrder`, //收货
   getArticleInfo: `${apiurl}/app/user/getArticleInfo`, //文章详情
-  getShareImg: `${apiurl}/app/common/getShareImg`, //生成二维码
+  // getShareImg: `${apiurl}/app/common/getShareImg`, //生成二维码
   checkRecommend: `${apiurl}/app/Deal/checkRecommend`, //是否为直推
   transferExhibits1: `${apiurl}/app/Deal/transferExhibits1`, //直推配票
 }
