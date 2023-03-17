@@ -7,22 +7,35 @@ Page({
     page: 1,
     size: 10,
     loading: true,
+    pageNum:0,
     list: [],
     total: 0
   },
-  async getRewardIntegral() {
+  changePage(e) {
+    this.data.page = e.currentTarget.dataset.type === 'next' ? ++this.data.page : --this.data.page
+    this.setData({
+      list: [],
+      page: this.data.page,
+      loading: true
+    }, () => {
+      this.getRewardIntegral(e.currentTarget.dataset.type)
+    })
+
+  },
+  async getRewardIntegral(e) {
     const {page,size} = this.data
-    const {code, data} = await api.getRewardIntegral({ page, size })
+    const {code,data} = await api.getRewardIntegral({page,size})
     if (code === 0) {
+      this.data.list.push(...data.list)
       this.setData({
+        pageNum:e==='next'?this.data.pageNum+=data.list.length:this.data.list.length,
         loading: false,
         list: this.data.list,
-        page: ++this.data.page,
         total: data.total
       })
     }
   },
   onLoad(options) {
-    this.getRewardIntegral()
+    this.getRewardIntegral('next')
   }
 })

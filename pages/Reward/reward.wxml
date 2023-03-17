@@ -1,18 +1,29 @@
+<wxs src="../../utils/comm.wxs" module="comm"></wxs>
 <navigator hover-class="none" class="back" style="top: {{statusBar.top}}px;" open-type="navigateBack">
   <van-icon name="arrow-left" />
 </navigator>
 <view>
   <image class="cont-top" style="height: 568rpx;" src="/static/icons/reward.png"></image>
   <view class="text">
-  <image class="imgtxt" src="/static/icons/rewardmx.png"/>
-</view>
-<view class="top">
-  <text style="margin-left: 70rpx;">日期</text>
-  <text>小计</text>
-</view>
-<view class="content">
-  <view class="black">
-  <text class="times">2023-03-07 00:27:41</text><text class="numbers">200</text>
-</view>
-</view>
+    <image class="imgtxt" src="/static/icons/rewardmx.png" />
+  </view>
+  <view class="top">
+    <text style="margin-left: 70rpx;">日期</text>
+    <text>小计</text>
+  </view>
+  <view class="content">
+    <view class="black" wx:for="{{list}}" wx:key="index">
+      <text class="times">{{comm.formatDate(item.create_time)}}</text><text class="numbers">{{item.reduce_balance}}</text>
+    </view>
+    <view class="pagination">
+      <view data-type="previous" class="previous" bindtap="changePage" wx:if="{{page>1 && list.length<total}}">上一页</view>
+      <view data-type="next" class="next" bindtap="changePage" wx:if="{{pageNum<total}}">下一页</view>
+    </view>
+    <view class="loading mask" wx:if="{{loading}}">
+      <van-loading type="spinner"></van-loading>
+    </view>
+    <view class="empty" wx:if="{{!loading && !list.length}}">
+      <image src="../../static/imgs/nocontent.png"></image>
+    </view>
+  </view>
 </view>

@@ -114,7 +114,7 @@
     <view data-type="2">
       <image src="../../static/imgs/jifen.png" />积分(剩余{{userInfo.integral}})
     </view>
-    <view data-type="4">
+    <view data-type="4" wx:if="{{commodityList[0].category_id!==2}}">
       <image src="../../static/imgs/quan.png" />购物券(剩余{{userInfo.coupon}})
     </view>
   </view>
