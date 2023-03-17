@@ -34,12 +34,12 @@ Page({
       {
         img: '/static/icons/3.png',
         lable: '银行卡管理',
-        url: '../../Serve-Tool/Bankcard/Banklist/banklist'
+        url: '../../Bankcard/Banklist/banklist'
       },
       {
         img: '/static/icons/4.png',
         lable: '公告中心',
-        url: '../subPages/orderList/orderList?active=4'
+        url: '/pages/Serve-Tool/Notice/notice'
       },
       {
         img: '/static/icons/5.png',

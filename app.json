@@ -7,7 +7,6 @@
     "pages/Register/register",
     "pages/Serve-Tool/Set/set",
     "pages/Serve-Tool/Invite/invite",
-    "pages/Serve-Tool/Bankcard/Banklist/banklist",
     "pages/Serve-Tool/SwitchAccount/swacc",
     "pages/Serve-Tool/Headimg/Headimg",
     "pages/Serve-Tool/Password/password",
@@ -18,23 +17,27 @@
     "pages/Coupons/Special/Special",
     "pages/Coupons/Record/record",
     "pages/Reward/reward",
-    "pages/Serve-Tool/Bankcard/Addbank/Addbank",
+    "pages/Bankcard/Addbank/Addbank",
+    "pages/Bankcard/Banklist/banklist",
     "pages/Product/list/list",
     "pages/Product/details/details",
     "pages/Address/Edit/edit",
     "pages/Address/GetAddress/getAddress",
     "pages/Huiyun/Addtransfer/addtransfer",
     "pages/Huiyun/AddExchange/exchange",
-    "pages/Huiyun/ExchangeRecord/ExchangeR"
+    "pages/Huiyun/ExchangeRecord/ExchangeR",
+    "pages/Serve-Tool/Notice/notice"
   ],
-  "subPackages": [{
-    "root": "pages/subPages/",
-    "pages": [
-      "orderDetails/orderDetails",
-      "twoPayment/twoPayment",
-      "orderList/orderList"
-    ]
-  }],
+  "subPackages": [
+    {
+      "root": "pages/subPages/",
+      "pages": [
+        "orderDetails/orderDetails",
+        "twoPayment/twoPayment",
+        "orderList/orderList"
+      ]
+    }
+  ],
   "tabBar": {
     "color": "#999999",
     "selectedColor": "#2A9F93",
@@ -64,7 +67,9 @@
       "desc": "你的位置信息将用于选择地址信息"
     }
   },
-  "requiredPrivateInfos": ["getLocation"],
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
   "plugins": {
     "citySelector": {
       "version": "1.0.0",

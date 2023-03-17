@@ -1,10 +1,6 @@
 const api = require('../../../utils/reques').default
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
   list:[],
   },
@@ -31,7 +27,6 @@ Page({
       for (let i = 0; i < list.length; i++) {
         let a = list[i]
         let b = a.bank_card.substr(12, 4)
-        console.log(b);
         datas[i].bank_card = b
         
         this.setData({

@@ -5,7 +5,7 @@ var time = 60
 Page({
   data: {
     statusBar: wx.getMenuButtonBoundingClientRect(),
-    mobile: '13143357862',
+    mobile: '',
     username:'',
     code: '',
     password: '',

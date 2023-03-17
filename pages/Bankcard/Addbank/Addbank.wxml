@@ -9,7 +9,7 @@
   <text>卡号</text><input style="height: 90rpx;margin-left: 50rpx;"  model:value="{{bank_card}}" type="number" placeholder="请输入银行卡号" auto-focus />
 </view>
 <view class="withdrawal">
-  <text>卡类型</text><input style="height: 90rpx;margin-left: 50rpx;"  model:value="{{bank_name}}" type="text" placeholder="请输入银行卡类型" auto-focus />
+  <text>卡类型</text><input style="height: 90rpx;margin-left: 50rpx;"  model:value="{{bank_name}}" type="text" placeholder="请输入银行卡名称" auto-focus />
 </view>
 <view class="withdrawal">
   <text>身份证</text><input style="height: 90rpx;margin-left: 50rpx;"  model:value="{{id_card}}" type="idcard" placeholder="请输入身份证" auto-focus />
