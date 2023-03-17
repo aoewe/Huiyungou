@@ -38,7 +38,7 @@ Page({
           img: '/static/icons/DC2.png',
           color: '#ff9947',
           url: '../subPages/orderList/orderList?active=2',
-          balance: re.integral_pq,
+          balance: re.integral,
         },
         {
           type: '购物券',
