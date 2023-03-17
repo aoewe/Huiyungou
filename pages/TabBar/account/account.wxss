@@ -4,6 +4,9 @@
   background-color: #F3F5F7;
   z-index: 999;
 }
+.loading{
+  margin-top: 30rpx;
+}
 .fleex {
   font-weight: normal;
   display: flex;
@@ -152,9 +155,9 @@ swiper{
   flex: 1;
   justify-content: center;
 }
-.black:first-child{
+/* .black:first-child{
   border-right: 1px solid #eeeeee;
-}
+} */
 .query {
   margin: 0rpx 52rpx;
   margin-top: 60rpx;

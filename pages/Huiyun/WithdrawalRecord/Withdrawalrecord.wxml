@@ -1,29 +1,35 @@
-<!-- 提现记录 -->
-
+<wxs src="../../../utils/comm.wxs" module="comm"></wxs>
 <view>
-  <view class="content">
+  <view class="content" wx:for="{{list}}" wx:key="index">
     <view class="title">提现到账</view>
     <view class="t-money">提现金额</view>
-    <view class="money">¥<text>879.00</text></view>
+    <view class="money">¥<text>{{item.amount-item.service_charge}}</text></view>
     <view class="cont-list">
       <view class="p">提现银行</view>
-      <text>浦发银行(3740)</text>
+      <text>{{item.bank_name}}({{comm.toStr(item.bank_code)}})</text>
     </view>
     <view class="cont-list">
       <view class="p">提现时间</view>
-      <text>2023-02-24 10:22:42</text>
+      <text>{{comm.formatDate(item.create_time)}}</text>
     </view>
-    <view class="cont-list">
+    <view class="cont-list" wx:if="{{item.status===1}}">
       <view class="p">到账时间</view>
-      <text>2023-02-24 15:12:17</text>
+      <text >{{comm.formatDate(item.update_time)}}</text>
     </view>
     <view class="cont-list">
-      <view class="p">备注</view>
-      <text>您的hi都极为</text>
+      <view class="p">状态</view>
+      <text style="color:{{item.status===0?'#005cac':item.status===1?'#009782':'#cd1e2b'}}">{{item.status===0?'审核中':item.status===1?'提现成功':'提现失败' }}</text>
     </view>
     <view class="cont-list">
       <view class="p">手续费</view>
-      <text>1100手续费</text>
+      <text>{{item.service_charge}}</text>
     </view>
   </view>
+  <view class="loading" wx:if="{{loading}}">
+    <van-loading type="spinner" color="#2A9F93" />
+  </view>
 </view>
+<view class="no-content" wx:if="{{list.length<1 && !loading}}">
+  <image src="/static/imgs/nocontent.png"></image>
+</view>
+<view wx:if="{{list.length===total&&list.length>=4}}" class="cnt-text">已全部加载</view>

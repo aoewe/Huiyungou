@@ -360,11 +360,23 @@ const buyDealOrder = data => {
     resolve(request(api.buyDealOrder, 'post', data));
   });
 };
+const getWithdrawalList = data => {
+  return new Promise((resolve, reject) => {
+    resolve(request(api.getWithdrawalList, 'post', data));
+  });
+};
+const getDealOrder = data => {
+  return new Promise((resolve, reject) => {
+    resolve(request(api.getDealOrder, 'post', data));
+  });
+};
 
 
 export default {
+  getDealOrder,
   checkRecommend,
   buyDealOrder,
+  getWithdrawalList,
   confirmOrder,
   getShareImg,
   readyDealOrder,

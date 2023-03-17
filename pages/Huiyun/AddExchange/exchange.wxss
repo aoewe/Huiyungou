@@ -3,15 +3,16 @@
 .cont-block {
   height: 390rpx;
 }
-.withdrawal{
+
+.withdrawal {
   font-size: 50rpx;
 }
 
 
 .withdrawal text {
   font-size: 28rpx;
-font-family: PingFang SC;
-font-weight: 500;
+  font-family: PingFang SC;
+  font-weight: 500;
 }
 
 .external-class {

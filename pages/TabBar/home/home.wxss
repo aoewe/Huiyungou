@@ -17,7 +17,18 @@
   display: flex;
   flex-direction: row;
 }
-
+.empty{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 288rpx;
+  width: 392rpx;
+  padding-top: 50rpx;
+}
+.empty image{
+  width: 100%;
+  height: 100%;
+}
 .Sp-img {
   width: 360rpx;
   height: 202rpx;
@@ -35,7 +46,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 28rpx;
-
+  position: relative;
 }
 
 .product-item {

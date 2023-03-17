@@ -9,7 +9,7 @@ Page({
       title: '全部'
     }, {
       name: 1,
-      title: '待支付'
+      title: '待付款'
     }, {
       name: 2,
       title: '待发货'
@@ -77,7 +77,7 @@ Page({
     switch (e.detail.index) {
       case 1:
         wx.setNavigationBarTitle({
-          title: '待支付',
+          title: '待付款',
         })
         this.setData({
           order_status: 0

@@ -8,9 +8,11 @@
   position: relative;
   justify-content: space-between;
 }
-.left{
+
+.left {
   display: flex;
 }
+
 .item-bg {
   position: absolute;
   display: block;
@@ -48,6 +50,36 @@
   margin-right: 20rpx;
 }
 
+.history {
+  position: fixed;
+  top: 24rpx;
+  right: 0;
+  background-color: rgba(0, 0, 0, .3);
+  color: #FFFFFF;
+  font-size: 28rpx;
+  padding: 0 4rpx 0 10rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  transform: translateX(83%);
+  animation: fly 3s ease 1
+}
+.history .van-icon{
+  position: relative;
+  left: -6rpx;
+}
+@keyframes fly {
+  0% {
+    transform: translateX(83%);
+  }
+
+  50% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(83%);
+  }
+}
+
 .right {
   display: flex;
   flex-direction: column;
@@ -62,9 +94,11 @@
   font-weight: bold;
   color: #FF2A48;
 }
-.right .go+text{
+
+.right .go+text {
   padding: 8rpx 0 10rpx;
 }
+
 .right text {
   font-size: 24rpx;
   font-family: PingFang SC;
@@ -93,7 +127,8 @@
   display: flex;
   font-size: 24rpx;
 }
-.time>view{
+
+.time>view {
   background-color: #FF2A48;
   color: #FFFFFF;
   border-radius: 4rpx;

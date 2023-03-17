@@ -4,6 +4,7 @@ Page({
     list: [],
     showPassword: false,
     deal_round_id: '',
+    timer:null,
     loading: true,
     deal_id: '',
     index: 0,
@@ -14,27 +15,21 @@ Page({
     this.getDeal()
   },
   async buyDealOrder(e) {
-    const {
-      deal_round_id,
-      deal_id
-    } = this.data
-    const params = {
-      deal_round_id,
-      deal_id,
-      surplus_password: e.paw,
-      buy_number: e.buy_number
-    }
-    const {
-      code
-    } = await api.buyDealOrder(params)
+    const {deal_round_id,deal_id,timer} = this.data
+    if(timer) return
+    this.setData({timer:true})
+    const params = {deal_round_id,deal_id, surplus_password: e.paw, buy_number: e.buy_number}
+    const {code} = await api.buyDealOrder(params)
     if (code === 0) {
       wx.showToast({
         title: '购买成功',
         icon: 'none'
       })
       this.setData({
-        showPassword: false,
+        showPassword: false,timer:null
       })
+    }else{
+      this.setData({timer:null})
     }
   },
   closePay() {

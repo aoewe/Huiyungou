@@ -32,4 +32,5 @@
 <view class="no-content" wx:if="{{!loading && !list.length}}">
   <image src="../../../static/imgs/nocontent.png"></image>
 </view>
+<navigator hover-class="none" url="../Record/record" class="history"><van-icon name="arrow" />查看拼券记录</navigator>
 <password-input wx:if="{{showPassword}}" show="{{showPassword}}" popupType="{{1}}" info="{{info}}" top="{{0}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>

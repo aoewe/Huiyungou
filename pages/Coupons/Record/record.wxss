@@ -1,4 +1,3 @@
-/* pages/Coupons/Record/record.wxss */
 .cont-list {
   display: flex;
   align-items: center;

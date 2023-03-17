@@ -30,10 +30,10 @@
       <image src="/static/icons/zhuanzeng.png" />
       转赠
     </navigator>
-    <!-- <navigator class="black" url="../../Huiyun/AddExchange/exchange">
+    <navigator hover-class="none" class="black" url="../../Huiyun/AddExchange/exchange">
       <image src="/static/icons/exchange.png" />
       兑换
-    </navigator> -->
+    </navigator>
     <navigator hover-class="none" class="black" url="../../Huiyun/AddWithdrawal/withdrawal">
       <image src="/static/icons/Cash.png" />
       提现

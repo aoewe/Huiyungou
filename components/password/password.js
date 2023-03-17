@@ -77,6 +77,12 @@ Component({
       if(this.properties.popupType===1) return
       if (this.data.codeList.length == 6) {
         this.triggerEvent('payOrderNext', this.data.codeList.join(''))
+        let timer = setTimeout(()=>{
+          this.setData({
+            codeList:[]
+          })
+        },500)
+        clearTimeout(timer)
       }
     },
     setCode(e) {
@@ -152,6 +158,12 @@ Component({
     },
     onSubmit(){
       this.triggerEvent('payOrderNext', {paw:this.data.codeList.join('').slice(0,6),buy_number:this.data.buy_number})
+      let timer = setTimeout(()=>{
+        this.setData({
+          codeList:[]
+        })
+      },500)
+      clearTimeout(timer)
     },
     onChange(event) {
       const num = (this.properties.info.deal_info.max_number-this.data.takeNotes.buy_sum_number)

@@ -22,7 +22,7 @@ Page({
       {
         img: '/static/icons/QB.png',
         lable: '全部',
-        url: '../../subPages/orderList/orderList?active=4'
+        url: '../../subPages/orderList/orderList'
       },
     ],
     contIcon: [
@@ -49,7 +49,7 @@ Page({
       {
         img: '/static/icons/6.png',
         lable: '推荐收益',
-        url: '../subPages/orderList/orderList?active=4'
+        url: '../../Reward/reward'
       },
       {
         img: '/static/icons/7.png',

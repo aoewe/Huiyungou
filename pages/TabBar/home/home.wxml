@@ -21,7 +21,7 @@
     </view>
   </view>
   <view class="shopping">商 · 品 · 展 · 示</view>
-  <view class="product-list" wx:if="{{showProduct.length}}">
+  <view class="product-list">
     <navigator class="product-item" url="../../Product/details/details?id={{item.id}}" wx:for="{{showProduct}}" wx:key="index">
       <image src="{{item.main_pic}}"></image>
       <view class="info">
@@ -29,8 +29,9 @@
         <text class="textone">¥<text class="texttow">{{item.price}}</text></text>
       </view>
     </navigator>
+    <view class="empty" wx:if="{{!showProduct.length}}">
+      <image src="../../../static/imgs/nocontent.png"></image>
+    </view>
   </view>
-  <view class="no-content" wx:else>
-    <image src="../../../static/imgs/nocontent.png"></image>
-  </view>
+
 </view>

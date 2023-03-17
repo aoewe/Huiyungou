@@ -20,7 +20,7 @@ Page({
     const params = {
       type,
       page,
-      size: 1
+      size
     }
     type == 2 && (params.stream_type = 4)
     const {

@@ -5,6 +5,9 @@ Page({
     statusBar: wx.getMenuButtonBoundingClientRect(),
     orderIcon: [],
     cardInfo: [],
+    page:1,
+    size:5,
+    total:0,
     swiperIndex: 0,
     vertical: false,
     cardLoading: true,
@@ -71,35 +74,40 @@ Page({
   async getStreamList() {
     const {
       swiperIndex,
-      orderIcon
+      orderIcon,page,size
     } = this.data
     const {
       code,
       data
     } = await api.getStreamList({
-      type: orderIcon[swiperIndex].value
+      type: orderIcon[swiperIndex].value,page,size
     })
     if (code === 0) {
+      this.data.cardInfo.push(...data.list)
       this.setData({
         cardLoading: false,
-        cardInfo: data.list
+        page:++this.data.page,
+        total:data.total,
+        cardInfo: this.data.cardInfo
       })
     }
   },
   bindchange(e) {
     this.setData({
       swiperIndex: e.detail.current,
+      page:1,
+      total:0,
       cardInfo:[],
       cardLoading: true
     }, () => {
       this.getStreamList()
     })
   },
-  // onReachBottom() {
-  //   if (this.data.list.length === this.list.total) return
-  //   this.setData({
-  //     loading: true
-  //   })
-  //   this.getStreamList()
-  // }
+  onReachBottom() {
+    if (this.data.cardInfo.length === this.data.total) return
+    this.setData({
+      cardLoading: true
+    })
+    this.getStreamList()
+  }
 })

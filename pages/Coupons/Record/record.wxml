@@ -1,11 +1,18 @@
-<!--pages/Coupons/Record/record.wxml-->
+<wxs src="../../../utils/comm.wxs" module="comm"></wxs>
 <view class="content">
-  <view class="cont-list">
-    <view class="cont-right">待发放</view>
+  <view class="cont-list" wx:for="{{list}}" wx:key="index">
+    <view class="cont-right">{{item.is_return===1?'已发放':'未发放'}}</view>
     <view class="cont-text">
-      <view class="one">A仓</view>
-      <view class="two">购买数量：1000</view>
-      <view class="two">购买时间：2023-03-07 08:45:46</view>
+      <view class="one">{{item.name}}</view>
+      <view class="two">购买数量：{{item.buy_number}}</view>
+      <view class="two">购买时间：{{comm.formatDate(item.create_time)}}</view>
     </view>
   </view>
+</view>
+<view class="loading">
+  <van-loading type="spinner" wx:if="{{loading}}"></van-loading>
+  <text wx:if="{{list.length===total && list.length>5}}">已全部加载</text>
+</view>
+<view class="no-content" wx:if="{{!loading && !list.length}}">
+  <image src="../../../static/imgs/nocontent.png"></image>
 </view>

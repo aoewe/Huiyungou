@@ -1,66 +1,66 @@
-// pages/Huiyun/AddExchange/exchange.js
+const api = require('../../../utils/reques').default
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    integral_pq: '',
+    showPassword:false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  async getUserInfo() {
+    const {
+      code,
+      data
+    } = await api.getUserInfo()
+    if (code === 0) {
+      this.setData({
+        userInfo: data,
+      })
+    }
+  },
+  payOrderNext(e) {
+    this.submit(e.detail)
+  },
+  changeIntegral(e) {
+    const num = parseInt(e.detail.value)
+    if (num > this.data.userInfo.integral_pq) this.setData({
+      integral_pq: this.data.userInfo.integral_pq
+    })
+  },
+  closePay() {
+    this.setData({
+      showPassword: false
+    })
+  },
+  async register() {
+    const {
+      integral_pq
+    } = this.data
+    if (!integral_pq) return wx.showToast({
+      title: '请输入兑换数量',
+      icon: 'none'
+    })
+    this.setData({
+      showPassword: true
+    })
+  },
+  async submit(surplus_password) {
+    const {
+      code
+    } = await api.changeIntegral({
+      integral_pq: this.data.integral_pq,
+      surplus_password
+    })
+    if (code === 0) {
+      this.setData({
+        integral_pq: '',
+        showPassword:false
+      })
+      wx.showToast({
+        title: '兑换成功',
+        icon: 'none'
+      })
+      this.getUserInfo()
+    }
+  },
   onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    this.getUserInfo()
   }
 })
