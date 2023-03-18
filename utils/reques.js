@@ -1,5 +1,5 @@
 import api from './api'
-// const des = require("./code");
+const des = require("./code");
 const request = (url, method, data) => {
   return new Promise((resolve, reject) => {
     const info = wx.getStorageSync('USERINFO')
@@ -7,8 +7,7 @@ const request = (url, method, data) => {
     wx.request({
       url,
       method,
-      // data:des.encode(data),
-      data:data,
+      data:des.encode(data),
       header: {
         uid: info.id,
         token: info.token,

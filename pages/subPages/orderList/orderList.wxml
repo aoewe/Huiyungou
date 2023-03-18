@@ -1,5 +1,5 @@
 <wxs module="m2">
-  var toFloat = function(num){
+  var toFloat = function (num) {
     return parseFloat(num)
   }
   module.exports.toFloat = toFloat;
@@ -8,7 +8,7 @@
   <van-tab wx:for="{{tabs}}" wx:key="index" name="{{item.name}}" title="{{item.title}}">
     <view class="list">
       <view class="item" style="background-color: {{gitem.order_status==4?'#eeeeee':''}};" wx:for="{{list}}" wx:for-item="gitem" wx:for-index="gidx" wx:key="gidx">
-        <navigator class="info" hover-class="none"  url="{{'../orderDetails/orderDetails?id='+gitem.id}}">
+        <navigator class="info" hover-class="none" url="{{'../orderDetails/orderDetails?id='+gitem.id}}">
           <van-image width="180rpx" height="180rpx" lazy-load src="{{gitem.detail[0].good_img}}" />
           <view>
             <view><text class="title">{{gitem.detail[0].good_name}}</text><text>{{m2.toFloat(gitem.detail[0].good_price)}}</text></view>
@@ -30,6 +30,9 @@
             <!-- <van-button data-id="{{gitem.id}}" catchtap="toLogistics">查看物流</van-button> -->
             <van-button catchtap="confirmOrder" data-id="{{gitem.id}}" color="#2A9F93">确认收货</van-button>
           </view>
+          <!-- <view class="status-b" wx:if="{{gitem.order_status===3}}">
+            <van-button data-id="{{gitem.id}}" catchtap="toLogistics">查看物流</van-button>
+          </view> -->
         </view>
       </view>
       <view class="loading" wx:if="{{loading}}">

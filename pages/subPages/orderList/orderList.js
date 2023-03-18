@@ -37,10 +37,6 @@ Page({
         if (res.confirm) {
           const {code} = await api.confirmOrder({ id })
           if(code===0){
-            wx.showToast({
-              title: '收货成功',
-              icon:'none'
-            })
             that.setData({
               order_status:2,
               list:[],
