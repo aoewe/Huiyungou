@@ -289,11 +289,6 @@ const index = data => {
     resolve(request(api.index, 'post', data));
   });
 };
-const buyAutoOrder = data => {
-  return new Promise((resolve, reject) => {
-    resolve(request(api.buyAutoOrder, 'post', data));
-  });
-};
 const getExhibitsStream = data => {
   return new Promise((resolve, reject) => {
     resolve(request(api.getExhibitsStream, 'post', data));
@@ -307,11 +302,6 @@ const checkRealName = data => {
 const changeIntegral = data => {
   return new Promise((resolve, reject) => {
     resolve(request(api.changeIntegral, 'post', data));
-  });
-};
-const getFansList = data => {
-  return new Promise((resolve, reject) => {
-    resolve(request(api.getFansList, 'post', data));
   });
 };
 const getArticleInfo = data => {
@@ -334,11 +324,11 @@ const confirmOrder = data => {
     resolve(request(api.confirmOrder, 'post', data));
   });
 };
-const getShareImg = data => {
-  return new Promise((resolve, reject) => {
-    resolve(request(api.getShareImg, 'post', data));
-  });
-};
+// const getShareImg = data => {
+//   return new Promise((resolve, reject) => {
+//     resolve(request(api.getShareImg, 'post', data));
+//   });
+// };
 const checkRecommend = data => {
   return new Promise((resolve, reject) => {
     resolve(request(api.checkRecommend, 'post', data));
@@ -377,12 +367,9 @@ export default {
   buyDealOrder,
   getWithdrawalList,
   confirmOrder,
-  getShareImg,
   readyDealOrder,
-  getFansList,
   getWinOrderInfo,
   getArticleInfo,
-  buyAutoOrder,
   changeIntegral,
   checkRealName,
   getExhibitsStream,

@@ -21,7 +21,7 @@
     "uglifyFileName": false,
     "uploadWithSourceMap": true,
     "ignoreDevUnusedFiles": false,
-    "ignoreUploadUnusedFiles": false,
+    "ignoreUploadUnusedFiles": true,
     "useIsolateContext": true,
     "nodeModules": false,
     "enhance": true,

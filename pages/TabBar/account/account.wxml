@@ -23,7 +23,7 @@
     </block>
   </swiper>
   <view class="indicator">
-    <view wx:for="{{orderIcon}}" class="dot {{index==swiperIndex ? 'dots' : ''}}"></view>
+    <view wx:for="{{orderIcon}}" wx:key="index" class="dot {{index==swiperIndex ? 'dots' : ''}}"></view>
   </view>
   <view class="threeicon">
     <navigator hover-class="none" class="black" url="../../Huiyun/Addtransfer/addtransfer">

@@ -1,6 +1,6 @@
 <view>
   <view class="content">
-    <navigator class="cont-list">
+    <navigator class="cont-list" url="/pages/Serve-Tool/Headimg/Headimg">
       <view class="cont-txt">修改头像</view>
       <view class="cont-left">
         <image style="width: 64rpx;height: 64rpx;background: cyan;border-radius: 50%;" src="" />
@@ -19,7 +19,7 @@
         <van-icon name="arrow" />
       </view>
       </navigator>
-      <navigator class="cont-list">
+      <navigator class="cont-list" url="../upPayPaw/upPayPaw">
         <view class="cont-txt">支付密码</view>
         <view class="cont-left">
           <van-icon name="arrow" />

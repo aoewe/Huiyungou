@@ -26,7 +26,8 @@
     "pages/Huiyun/Addtransfer/addtransfer",
     "pages/Huiyun/AddExchange/exchange",
     "pages/Huiyun/ExchangeRecord/ExchangeR",
-    "pages/Serve-Tool/Notice/notice"
+    "pages/Serve-Tool/Notice/notice",
+    "pages/Serve-Tool/upPayPaw/upPayPaw"
   ],
   "subPackages": [
     {
@@ -88,6 +89,7 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-loading": "@vant/weapp/loading/index",

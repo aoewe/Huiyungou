@@ -7,7 +7,7 @@
 <view>
   <view class="title">用户登录</view>
   <view class="input">
-    <input type="number" maxlength="11" placeholder-class="placeholder" model:value="{{username}}" placeholder="请输入用户名" />
+    <input type="text" maxlength="11" placeholder-class="placeholder" model:value="{{username}}" placeholder="请输入用户名" />
   </view>
   <view class="input">
     <input type="password" placeholder-class="placeholder" model:value="{{password}}" placeholder="输入登陆密码" />
