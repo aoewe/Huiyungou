@@ -9,16 +9,34 @@
   border: 3px solid #FFFFFF;
   margin-left: 28rpx;
 }
-.top-title{
+.user{
+  display: flex;
+  align-items: center;
+}
+.identity {
+  display: inline-block;
+  color: #2A9F93;
+  font-size: 20rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding: 0 12rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  margin-left: 16rpx;
+}
+
+.top-title {
   position: absolute;
   font-size: 48rpx;
   color: #FFFFFF;
   font-weight: bold;
   padding-left: 28rpx;
 }
-.header{
+
+.header {
   position: static;
 }
+
 .head-flex {
   display: flex;
   align-items: center;

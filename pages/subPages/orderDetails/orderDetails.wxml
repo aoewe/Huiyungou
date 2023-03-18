@@ -1,5 +1,5 @@
 <wxs module="m2">
-  var toFloat = function(num){
+  var toFloat = function (num) {
     return parseFloat(num)
   }
   module.exports.toFloat = toFloat;
@@ -56,7 +56,7 @@
   </view>
   <view class="commodity-info">
     <view class="info">
-      <image src="{{orderInfo.product_info[0].good_img}}"></image>
+      <van-image fit="cover" custom-class="image" lazy-load src="{{orderInfo.product_info[0].good_img}}" />
       <view class="title-price">
         <view><text class="commodity-name">{{orderInfo.product_info[0].good_name}}</text><text>{{m2.toFloat(orderInfo.product_info[0].good_price)}}</text></view>
         <view><text>{{orderInfo.product_info[0].good_attr[0].value}}</text><text>x{{orderInfo.product_info[0].buy_cnt}}</text></view>

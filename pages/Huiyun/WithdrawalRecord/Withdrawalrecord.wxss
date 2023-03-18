@@ -6,7 +6,9 @@
   background: #FFFFFF;
   border-radius: 16rpx;
 }
-
+.loading{
+  padding-top: 20rpx;
+}
 .title {
   padding: 40rpx;
   font-size: 32rpx;

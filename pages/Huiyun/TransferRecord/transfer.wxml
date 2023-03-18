@@ -1,5 +1,5 @@
 <wxs src="../../../utils/comm.wxs" module="comm"></wxs>
-<view>
+<view class="box">
   <view class="conter-list" wx:for="{{list}}" wx:key="index">
     <view>
       <view class="black" wx:if="{{item.type===2}}">{{item.explain}}</view>

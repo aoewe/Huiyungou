@@ -59,8 +59,8 @@
   font-size: 28rpx;
   padding: 0 4rpx 0 10rpx;
   border-radius: 10rpx 0 0 10rpx;
-  transform: translateX(83%);
-  animation: fly 3s ease 1
+  transform: translateX(82%);
+  animation: fly 5s ease 1
 }
 .history .van-icon{
   position: relative;
@@ -68,7 +68,7 @@
 }
 @keyframes fly {
   0% {
-    transform: translateX(83%);
+    transform: translateX(82%);
   }
 
   50% {
@@ -76,7 +76,7 @@
   }
 
   100% {
-    transform: translateX(83%);
+    transform: translateX(82%);
   }
 }
 

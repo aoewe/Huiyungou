@@ -45,10 +45,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 28rpx;
+  padding: 28rpx 28rpx 100rpx;
   position: relative;
 }
-
+.more{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 26rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #2295ff;
+  font-size: 28rpx;
+}
 .product-item {
   width: 336rpx;
   margin-bottom: 10rpx;

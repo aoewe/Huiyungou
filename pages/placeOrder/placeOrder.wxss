@@ -13,6 +13,19 @@ page {
   box-sizing: border-box;
 }
 
+.mode:active {
+  transition: all 0s;
+  background-color: #eeeeee;
+}
+
+.select {
+  box-sizing: border-box;
+  height: 44rpx;
+  width: 44rpx;
+  border: 1rpx solid #666666;
+  border-radius: 50%;
+}
+
 .sel-address {
   display: flex;
   justify-content: space-between;
@@ -241,9 +254,11 @@ page {
   align-items: center;
   justify-content: center;
 }
-.add-num{
+
+.add-num {
   color: #fff;
 }
+
 .content_commodity_text_price>view:nth-of-type(2)>button:nth-of-type(1) .van-icon,
 .add-num .van-icon {
   font-size: 26rpx;
@@ -501,7 +516,8 @@ page {
   line-height: 90rpx;
   text-align: center;
 }
-.popup-box .top{
+
+.popup-box .top {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -509,29 +525,55 @@ page {
   border-bottom: 1px solid #eeeeee;
   font-size: 36rpx;
 }
-.pay-box{
-  padding: 0 40rpx 60rpx;
+
+.pay-box {
+  padding: 0 40rpx 0;
+  background-color: #ffffff;
+  width: 714rpx;
+  margin: 24rpx auto;
+  border-radius: 16rpx;
+  box-sizing: border-box;
 }
-.pay-box view{
+
+.pay-box>view {
   display: flex;
   align-items: center;
   height: 94rpx;
   border-bottom: 1px solid #eeeeee;
   font-size: 28rpx;
   color: #333333;
+  display: flex;
+  justify-content: space-between;
 }
-.pay-box view:active{
+.pay-box>view>image{
+  padding-right: 0;
+}
+.select{
+  border-radius: 50%;
+  width: 42rpx;
+  height: 42rpx;
+  box-sizing: border-box;
+  border: 1px solid #999999 !important;
+}
+.pay-box>view view{
+  display: flex;
+  align-items: center;
+}
+.pay-box view:active {
   opacity: .8;
 }
-.pay-box view:last-child{
+
+.pay-box view:last-child {
   border-color: #fff;
 }
-.pay-box image{
+
+.pay-box image {
   height: 42rpx;
   width: 42rpx;
   padding-right: 28rpx;
 }
-.popup-box .van-icon{
+
+.popup-box .van-icon {
   position: absolute;
   left: 32rpx;
 }

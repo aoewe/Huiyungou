@@ -4,7 +4,7 @@
   <view class="head-flex" style="padding-top: {{statusBar.top+statusBar.height+24}}px;">
     <van-image bind:error="imgError" round custom-class="head-picture" src="{{UserInfo.avatar}}" />
     <view>
-      <view class="head-txt">{{UserInfo.username}}</view>
+      <view class="head-txt user">{{UserInfo.username}}<text class="identity">{{UserInfo.type_name}}</text></view>
       <view class="head-txt" style="font-size: 29rpx;">会员号：{{UserInfo.uuid}}</view>
     </view>
   </view>

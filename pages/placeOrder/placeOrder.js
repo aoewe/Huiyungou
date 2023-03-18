@@ -11,8 +11,6 @@ Page({
     piece: 0, //共几件
     payPrice: 0,
     //支付方式
-    paytype:1,
-    showSelPay:false,
     payModeWX: true,
     payModeQB: false,
     walletBalance: {
@@ -22,7 +20,8 @@ Page({
     total: 0,
     showPassword: false,
     codeList: [],
-    userInfo:{}
+    userInfo:{},
+    payType:1
   },
   async getUserInfo(){
     const {code,data} = await fetch.getUserInfo()
@@ -32,12 +31,15 @@ Page({
       })
     }
   },
+  changePayType(e){
+    this.setData({payType:e.target.dataset.type||e.currentTarget.dataset.type})
+  },
   // 钱包支付输完回调
   async payOrderNext(e) {
     let data = {
       id: this.data.order_id,
       order_sn: this.data.order_sn,
-      pay_type: this.data.paytype,
+      pay_type: this.data.payType,
       password: e.detail,
       openid: app.globalData.openId
     }
@@ -57,26 +59,21 @@ Page({
       },500)
     }
   },
-  onClose(){
-    this.setData({showSelPay:false})
-  },
+
   closePay() {
     this.setData({
       showPassword: false,
       codeList: []
     })
   },
-  onSelPay(){
+  // 提交订单
+  async submit(e) {
     if (!this.data.address) {
       wx.navigateTo({
         url: '../Address/GetAddress/getAddress',
       })
-    }else{
-      this.setData({showSelPay:true})
+      return
     }
-  },
-  // 提交订单
-  async submit(e) {
     let list = []
     this.data.commodityList.forEach(el => {
       let item = {
@@ -99,7 +96,6 @@ Page({
         payPrice: res.data.list[0].payment_money,
         order_id: res.data.list[0].id,
         order_sn: res.data.list[0].order_sn,
-        showSelPay:false,
         paytype:e.target.dataset.type
       })
       this.setData({

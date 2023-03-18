@@ -2,6 +2,7 @@ const fetch = require("../../../utils/reques").default;
 Page({
   data: {
     statusBar: wx.getMenuButtonBoundingClientRect(),
+    loading:true,
     articleList: [],
     showProduct: [],
     swiperList: [{
@@ -12,7 +13,6 @@ Page({
   onShow() {
     this.index()
   },
-
   async index() {
     const {
       code,
@@ -28,6 +28,7 @@ Page({
         showProduct: show_product,
         articleList: article,
         swiperList: banner_list,
+        loading:false
       })
     }
   },

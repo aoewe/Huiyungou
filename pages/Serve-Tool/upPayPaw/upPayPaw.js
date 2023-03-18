@@ -1,5 +1,4 @@
 const fetch = require("../../../utils/reques").default
-// const des = require("../../../utils/code");
 const app = getApp()
 Page({
   data: {

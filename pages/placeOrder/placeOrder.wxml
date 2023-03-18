@@ -75,23 +75,29 @@
 </view>
 
 <!-- 支付方式 -->
-<!-- <view class="payMode" wx:if="{{commodityList.length !== 0}}">
-  <view>
-    <view>支付方式</view>
-    <view class="payMode_all" catchtap="payModeWX">
-      <image src="../../../static/image/wx.png"></image>
-      <text>微信</text>
-      <image class="all_tp" src="/static/image/active1.png" wx:if="{{payModeWX}}"></image>
-      <view class="all_bg" wx:else></view>
+<view class="pay-box">
+  <view data-type="1" bindtap="changePayType">
+    <view>
+      <image src="../../static/imgs/yue.png" />余额(剩余{{userInfo.balance}})
     </view>
-    <view class="payMode_all"  catchtap="payModeQB">
-      <image src="../../../static/image/qb.png"></image>
-      <text>钱包支付(剩余{{walletBalance.money}})</text>
-      <image class="all_tp" src="/static/image/active1.png" wx:if="{{payModeQB}}"></image>
-      <view class="all_bg" wx:else></view>
-    </view>
+    <image src="../../static/imgs/active1.png" wx:if="{{payType==1}}"></image>
+    <view class="select" wx:else></view>
   </view>
-</view> -->
+  <view data-type="2" bindtap="changePayType">
+    <view>
+      <image src="../../static/imgs/jifen.png" />积分(剩余{{userInfo.integral}})
+    </view>
+    <image src="../../static/imgs/active1.png" wx:if="{{payType==2}}"></image>
+    <view class="select" wx:else></view>
+  </view>
+  <view data-type="4" bindtap="changePayType" wx:if="{{commodityList[0].category_id!==2 && commodityList[0].category_id!==1 &&commodityList[0].category_id!==3}}">
+    <view>
+      <image src="../../static/imgs/quan.png" />购物券(剩余{{userInfo.coupon}})
+    </view>
+    <image src="../../static/imgs/active1.png" wx:if="{{payType==4}}"></image>
+    <view class="select" wx:else></view>
+  </view>
+</view>
 <view style="height: 98rpx;"></view>
 <view class="footer">
   <view class="total-price">
@@ -100,27 +106,10 @@
     <text class="text3">{{m2.toFloat(total)}}</text>
     <text class="text4"></text>
   </view>
-  <view wx:if="{{commodityList.length !== 0}}" catchtap="onSelPay">提交订单</view>
+  <view wx:if="{{commodityList.length !== 0}}" catchtap="submit">提交订单</view>
 </view>
-<!-- 钱包支付面板 -->
-<van-popup custom-class="popup-box" round show="{{ showSelPay }}" bind:close="onClose" position="bottom">
-  <view class="top">
-    <van-icon bindtap="onClose" name="arrow-left" />选择支付方式
-  </view>
-  <view class="pay-box" bindtap="submit">
-    <view data-type="1">
-      <image src="../../static/imgs/yue.png" />余额(剩余{{userInfo.balance}})
-    </view>
-    <view data-type="2">
-      <image src="../../static/imgs/jifen.png" />积分(剩余{{userInfo.integral}})
-    </view>
-    <view data-type="4" wx:if="{{commodityList[0].category_id!==2}}">
-      <image src="../../static/imgs/quan.png" />购物券(剩余{{userInfo.coupon}})
-    </view>
-  </view>
-</van-popup>
 <view>
   <view>
-    <password-input top="{{0}}" type="{{paytype}}" show="{{showPassword}}" payPrice="{{payPrice}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>
+    <password-input top="{{0}}" type="{{payType}}" show="{{showPassword}}" payPrice="{{payPrice}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>
   </view>
 </view>

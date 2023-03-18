@@ -7,12 +7,38 @@
 </view>
 
 <view class="bottom safe">
-  <!-- <view class="forget-password" bindtap="toUpPassword">忘记支付密码？</view> -->
+  <view class="forget-password" bindtap="toUpPassword">忘记支付密码？</view>
   <van-button color="#2A9F93" bindtap="pay">确认支付</van-button>
 </view>
 <!-- 钱包支付面板 -->
+<view class="payment">
+  <view class="mode" catchtap="selectPay" data-index="1">
+    <view>
+      <image src="../../../static/imgs/yue.png"></image>
+      <text>余额</text>
+    </view>
+    <image src="../../../static/imgs/active1.png" wx:if="{{paymentMethod==1}}"></image>
+    <view data-index="1" class="select" wx:else></view>
+  </view>
+  <view class="mode" catchtap="selectPay" data-index="2">
+    <view>
+      <image src="../../../static/imgs/jifen.png"></image>
+      <text>积分</text>
+    </view>
+    <image src="../../../static/imgs/active1.png" wx:if="{{paymentMethod==2}}"></image>
+    <view data-index="2" class="select" wx:else></view>
+  </view>
+  <view class="mode" catchtap="selectPay" data-index="4" wx:if="{{info.order_type!==2 && info.order_type!==1 &&info.order_type!==3}}">
+    <view>
+      <image src="../../../static/imgs/quan.png"></image>
+      <text>购物券</text>
+    </view>
+    <image src="../../../static/imgs/active1.png" wx:if="{{paymentMethod==4}}"></image>
+    <view data-index="4" class="select" wx:else></view>
+  </view>
+</view>
 <view>
   <view wx:if="{{showPassword}}">
-    <password-input show="{{showPassword}}" top="{{0}}" payPrice="{{info.payment_money}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>
+    <password-input show="{{showPassword}}" top="{{0}}" type="{{paymentMethod}}" payPrice="{{info.payment_money}}" bind:closePay="closePay" bind:payOrderNext="payOrderNext"></password-input>
   </view>
 </view>

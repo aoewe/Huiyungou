@@ -29,9 +29,9 @@
         <text class="textone">¥<text class="texttow">{{item.price}}</text></text>
       </view>
     </navigator>
-    <view class="empty" wx:if="{{!showProduct.length}}">
+    <navigator hover-class="none" wx:if="{{showProduct.length>3}}" url="../../Product/list/list?id=4" class="more">查看更多<van-icon name="arrow" size="24rpx" /></navigator>
+    <view class="empty" wx:if="{{!showProduct.length && !loading}}">
       <image src="../../../static/imgs/nocontent.png"></image>
     </view>
   </view>
-
 </view>

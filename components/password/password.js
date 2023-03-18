@@ -6,7 +6,13 @@ Component({
     type:1,
     popupType:0,
     top:0,
-    show:false
+    show:{
+      type:Boolean,
+      value:false,
+      observer(){
+        this.setData({codeList:[]})
+      }
+    }
   },
   
   data: {
@@ -157,11 +163,18 @@ Component({
       }
     },
     onSubmit(){
-      this.triggerEvent('payOrderNext', {paw:this.data.codeList.join('').slice(0,6),buy_number:this.data.buy_number})
+      const {buy_number} = this.data
+      if(buy_number<this.properties.info.deal_info.min_number) return wx.showToast({
+        title: '购买数量不能小于最小购买值',
+        icon:'none'
+      })
+      wx.showLoading({title:'购买中'})
+      this.triggerEvent('payOrderNext', {paw:this.data.codeList.join('').slice(0,6),buy_number})
       let timer = setTimeout(()=>{
         this.setData({
           codeList:[]
         })
+        wx.hideLoading()
       },500)
       clearTimeout(timer)
     },

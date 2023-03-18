@@ -1,6 +1,5 @@
 const api = require('../../../utils/reques').default
 Page({
-
   data: {
     list:[],
     loading:true,

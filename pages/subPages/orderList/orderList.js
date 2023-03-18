@@ -38,7 +38,8 @@ Page({
           const {code} = await api.confirmOrder({ id })
           if(code===0){
             that.setData({
-              order_status:2,
+              order_status:this.data.active===3?2:'',
+              loading:true,
               list:[],
               page:1
             })
@@ -68,6 +69,7 @@ Page({
       page: 1,
       loading: true,
       order_status: '',
+      active:e.detail.index,
       list: [],
     })
     switch (e.detail.index) {
@@ -120,7 +122,8 @@ Page({
       order_sn,
       id,
       create_time,
-      detail
+      detail,
+      order_type
     } = e.currentTarget.dataset.item
     let good_name = detail[0].good_name
     let data = {
@@ -130,7 +133,7 @@ Page({
       order_sn,
       id,
       create_time,
-      good_name
+      good_name,order_type
     }
     data = JSON.stringify(data)
     wx.navigateTo({

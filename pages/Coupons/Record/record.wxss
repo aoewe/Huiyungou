@@ -1,3 +1,6 @@
+page{
+  padding-bottom: 20rpx;
+}
 .cont-list {
   display: flex;
   align-items: center;
@@ -7,7 +10,9 @@
   background: #FFFFFF;
   border-radius: 12rpx;
 }
-
+.loading{
+  padding-top: 20rpx;
+}
 .cont-right {
   width: 178rpx;
   height: 178rpx;

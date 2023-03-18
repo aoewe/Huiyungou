@@ -1,4 +1,6 @@
-/* pages/Transfer/transfer.wxss */
+page{
+  padding-bottom: 20rpx;
+}
 .conter-list {
   display: flex;
   align-items: center;
@@ -27,4 +29,7 @@ text {
   font-family: PingFang SC;
   font-weight: 400;
   color: #999999;
+}
+.loading{
+  padding-top: 20rpx;
 }

@@ -37,14 +37,20 @@
 
 <!-- 选择规格分类 -->
 <view class="choose">
-  <view class="chooset">
-    <view class="a">请选择<text>规格分类</text></view>
+  <view class="chooset" bindtap="goPlaceOrder">
+    <view class="a">请选择<text wx:for="{{selValue}}" wx:key="index">{{item}}</text></view>
     <van-icon name="arrow" />
   </view>
   <view class="threeimg">
-<view class="centers"><image src="/static/icons/zpi.png"/>正品包邮</view>
-<view class="centers"><image src="/static/icons/dfhi.png"/>快速发货</view>
-<view class="centers"><image src="/static/icons/shi.png"/>售后无忧 </view>
+    <view class="centers">
+      <image src="/static/icons/zpi.png" />正品包邮
+    </view>
+    <view class="centers">
+      <image src="/static/icons/dfhi.png" />快速发货
+    </view>
+    <view class="centers">
+      <image src="/static/icons/shi.png" />售后无忧
+    </view>
   </view>
 </view>
 
@@ -71,7 +77,7 @@
   <view class="specifications-info">
     <!-- 默认展示数据 -->
     <view class="info-top" wx:if="{{!skuData}}">
-      <image src="{{skuList[0].main_pic}}"></image>
+      <van-image custom-class="main_pic" lazy-load src="{{skuList[0].main_pic}}" />
       <view class="price-stock">
         <text>¥{{m2.toFloat(skuList[0].price)}}</text>
         <text>编号：{{skuList[0].goods_code}}</text>
@@ -80,7 +86,7 @@
     </view>
     <!-- 选择规格后展示数据 -->
     <view class="info-top" wx:else>
-      <image src="{{skuData.main_pic}}"></image>
+      <van-image custom-class="main_pic" lazy-load src="{{skuData.main_pic}}" />
       <view class="price-stock">
         <text>¥{{m2.toFloat(skuData.price)}}</text>
         <text>编号：{{skuData.goods_code}}</text>
@@ -105,4 +111,4 @@
     <van-button round bindtap="toOrder">确定</van-button>
   </view>
 </van-action-sheet>
-<van-card custom-class="van-card-bg" price="{{price}}" desc="{{selling_intro}}" thumb="{{ img_path }}" curSpec="{{curSpec}}"/>
+<van-card custom-class="van-card-bg" price="{{price}}" desc="{{selling_intro}}" thumb="{{ img_path }}" curSpec="{{curSpec}}" />

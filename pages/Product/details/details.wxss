@@ -242,12 +242,14 @@ page {
   display: flex;
 }
 
-.specifications-info image {
+.specifications-info image,.main_pic {
   height: 150rpx;
   width: 150rpx;
   border-radius: 10rpx;
 }
-
+.van-button--danger{
+  height: 72rpx !important;
+}
 .choice {
   font-size: 28rpx;
 }

@@ -2,9 +2,6 @@ const fetch = require("../../../utils/reques").default
 const app = getApp()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     bottom: wx.getStorageSync('bottom'),
     paymentMethod: 1,
@@ -15,7 +12,7 @@ Page({
   },
   toUpPassword() {
     wx.navigateTo({
-      url: '/pages/children/payPassword/payPassword',
+      url: '../../Serve-Tool/upPayPaw/upPayPaw',
     })
   },
   // 订单剩余时间
@@ -58,79 +55,9 @@ Page({
     })
   },
   pay() {
-    let that = this
-    if (this.data.paymentMethod == '1') {
-      this.setData({
-        showPassword: true
-      })
-    } else {
-      if (this.data.info.payment_money <= 0) {
-        wx.showToast({
-          title: '当前订单支付金额为零，请使用钱包支付',
-          icon: "none"
-        })
-        return
-      }
-      let data = {
-        id: this.data.info.id,
-        order_sn: this.data.info.order_sn,
-        pay_type: 2,
-        openid: app.globalData.openId
-      }
-      if (this.data.type === '1') {
-        fetch.payOrder(data).then(res => {
-          if (res.data.code == 0) {
-            wx.requestPayment({
-              nonceStr: res.data.data.pay_param.nonceStr,
-              package: res.data.data.pay_param.package,
-              paySign: res.data.data.pay_param.paySign,
-              timeStamp: res.data.data.pay_param.timeStamp,
-              signType: res.data.data.pay_param.signType,
-              success(res) {
-                let isRefresh = true
-                wx.redirectTo({
-                  url: '/hotelPages/pages/hotelOrderDetails/hotelOrderDetails?id=' + that.data.info.id + '&isRefresh=' + isRefresh,
-                })
-              },
-              fail(res) {
-                console.log(res)
-              }
-            })
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none'
-            })
-          }
-        })
-      } else {
-        fetch.getPayOrder(data).then(res => {
-          if (res.data.code == 0) {
-            wx.requestPayment({
-              nonceStr: res.data.data.pay_param.nonceStr,
-              package: res.data.data.pay_param.package,
-              paySign: res.data.data.pay_param.paySign,
-              timeStamp: res.data.data.pay_param.timeStamp,
-              signType: res.data.data.pay_param.signType,
-              success(res) {
-                let isRefresh = true
-                wx.redirectTo({
-                  url: '../paymentDetails/paymentDetails?id=' + that.data.info.id + '&isRefresh=' + isRefresh,
-                })
-              },
-              fail(res) {
-                console.log(res)
-              }
-            })
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none'
-            })
-          }
-        })
-      }
-    }
+    this.setData({
+      showPassword: true
+    })
   },
   closePay() {
     this.setData({
@@ -142,7 +69,7 @@ Page({
     let data = {
       id: this.data.info.id,
       order_sn: this.data.info.order_sn,
-      pay_type: 0,
+      pay_type: this.data.paymentMethod,
       password: e.detail
     }
     const res = await fetch.getPayOrder(data)
@@ -155,6 +82,7 @@ Page({
         var previousPage = pages[pages.length - 2]
         previousPage.setData({
           order_status:0,
+          loading:true,
           list:[],
           page:1
         })
