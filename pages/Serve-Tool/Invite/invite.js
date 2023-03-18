@@ -137,7 +137,6 @@ Page({
     this.setData({
       info: wx.getStorageSync('USERINFO')
     })
-    console.log(this.data.info);
   },
   onShow(){
     const id = new Date().getTime().toString().slice(7)

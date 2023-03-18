@@ -3,7 +3,7 @@
   width: 95%;
   height: 260rpx;
   margin: 24rpx auto;
-  background: #E04855;
+  background: #2A9F93;
   border-radius: 16rpx;
 }
 

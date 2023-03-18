@@ -3,7 +3,7 @@
     <navigator class="cont-list" url="/pages/Serve-Tool/Headimg/Headimg">
       <view class="cont-txt">修改头像</view>
       <view class="cont-left">
-        <image style="width: 64rpx;height: 64rpx;background: cyan;border-radius: 50%;" src="" />
+        <image binderror="imgError" style="width: 64rpx;height: 64rpx;border-radius: 50%;" src="{{userInfo.avatar}}" />
         <van-icon name="arrow" />
       </view>
     </navigator>

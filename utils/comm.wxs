@@ -9,8 +9,8 @@ var formatDate = function (time) {
   var s = date.getSeconds();
   return y + '-' + m + '-' + d + '  ' + h + ':' + mm + ':' + s
 }
-var toStr = function (str) {
-  return str.substring(str.length, str.length - 4)
+var toStr = function (str,num=4) {
+  return str.substring(str.length, str.length - num)
 }
 module.exports = {
   formatDate: formatDate,

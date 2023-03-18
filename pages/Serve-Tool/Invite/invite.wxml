@@ -10,16 +10,15 @@
   <wh-addTips text="点击「发送邀请码给好友」" duration="3"></wh-addTips>
   <view class="content">
     <view class="user-top">
-    <van-image round custom-class="head" src="{{info.avatar}}" />
-      
+      <van-image round custom-class="head" src="{{info.avatar}}" />
       <view>
         <view class="textone">{{info.username}}</view>
         <view class="texttwo">{{info.uuid}}</view>
       </view>
     </view>
     <view class="user-switch">
-    <view class="{{isHidden ? 'switchs' : 'switchn'}}" bindtap="switch">个人码</view>
-    <view class="{{isHidden ? 'switchn' : 'switchs'}}" bindtap="switch">转赠码</view>
+      <view class="{{isHidden ? 'switchs' : 'switchn'}}" bindtap="switch">个人码</view>
+      <view class="{{isHidden ? 'switchn' : 'switchs'}}" bindtap="switch">转赠码</view>
     </view>
     <view class="QRcode">
       <image src="{{qrcodePath}}" />

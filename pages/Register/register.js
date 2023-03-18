@@ -11,7 +11,7 @@ Page({
     username: '',
     code: '',
     password: '',
-    up_uuid: '10002',
+    up_uuid: '',
     show: false,
     type: false,
     text: '发送验证码'
@@ -68,8 +68,6 @@ Page({
       username: params.username,
       password: params.password
     }
-    console.log(param);
-
     const res = await api.login(param)
     if (res.code === 0) {
       const type = this.data.type
@@ -81,7 +79,6 @@ Page({
         } else {
           accounts.push(res.data);
           wx.setStorageSync('accounts', accounts);
-          console.log('账号添加成功');
         }
         wx.setStorageSync('USERINFO', res.data)
         wx.showToast({

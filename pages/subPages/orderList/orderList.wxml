@@ -9,7 +9,7 @@
     <view class="list">
       <view class="item" style="background-color: {{gitem.order_status==4?'#eeeeee':''}};" wx:for="{{list}}" wx:for-item="gitem" wx:for-index="gidx" wx:key="gidx">
         <navigator class="info" hover-class="none" url="{{'../orderDetails/orderDetails?id='+gitem.id}}">
-          <van-image width="180rpx" height="180rpx" lazy-load src="{{gitem.detail[0].good_img}}" />
+          <van-image width="180rpx" height="180rpx" fit="cover" lazy-load src="{{gitem.detail[0].good_img}}" />
           <view>
             <view><text class="title">{{gitem.detail[0].good_name}}</text><text>{{m2.toFloat(gitem.detail[0].good_price)}}</text></view>
             <view>

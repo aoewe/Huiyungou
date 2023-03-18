@@ -2,7 +2,7 @@
   <image class="cont-top" src="/static/icons/mybackage.png"></image>
   <view class="top-title" style="top:{{statusBar.top}}px;">我的</view>
   <view class="head-flex" style="padding-top: {{statusBar.top+statusBar.height+24}}px;">
-    <van-image round custom-class="head-picture" src="{{UserInfo.avatar}}" />
+    <van-image bind:error="imgError" round custom-class="head-picture" src="{{UserInfo.avatar}}" />
     <view>
       <view class="head-txt">{{UserInfo.username}}</view>
       <view class="head-txt" style="font-size: 29rpx;">会员号：{{UserInfo.uuid}}</view>

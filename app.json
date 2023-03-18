@@ -34,6 +34,7 @@
       "root": "pages/subPages/",
       "pages": [
         "orderDetails/orderDetails",
+        "articleInfo/articleInfo",
         "twoPayment/twoPayment",
         "logistics/logistics",
         "orderList/orderList"

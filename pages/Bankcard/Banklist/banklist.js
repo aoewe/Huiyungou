@@ -11,11 +11,18 @@ Page({
       isSel: options.isSel || false
     })
   },
+  toEdit(e) {
+    wx.navigateTo({
+      url: `../Addbank/Addbank?info=${JSON.stringify(e.currentTarget.dataset.item)}`,
+    })
+  },
   onBack(e) {
     const bankInfo = JSON.stringify(e.currentTarget.dataset.item)
     var pages = getCurrentPages();
     var previousPage = pages[pages.length - 2]
-    previousPage.setData({bankInfo})
+    previousPage.setData({
+      bankInfo
+    })
     let timer = setTimeout(() => {
       wx.navigateBack()
       clearTimeout(timer)
@@ -36,15 +43,9 @@ Page({
         list
       } = res.data
       const datas = list
-      for (let i = 0; i < list.length; i++) {
-        let a = list[i]
-        let b = a.bank_card.substr(12, 4)
-        datas[i].bank_card = b
-
-        this.setData({
-          list: datas
-        })
-      }
+      this.setData({
+        list: datas
+      })
     }
   }
 })

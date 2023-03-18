@@ -1,61 +1,96 @@
-/* pages/Serve-Tool/Notice/notice.wxss */
-.content {
-  width: 702rpx;
-  height: 274rpx;
-  background: #FFFFFF;
-  border-radius: 12rpx;
-  margin: 24rpx auto;
+page {
+  padding-bottom: 24rpx;
 }
 
-.title {
-  width: 640rpx;
-  margin: 0rpx auto;
-  padding-top: 24rpx;
-  margin-bottom: 24rpx;
-  font-size: 32rpx;
-  font-family: PingFang SC;
-  font-weight: 400;
-  color: #333333;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+.list {
+  padding: 24rpx;
+  border-radius: 24rpx;
+  position: relative;
 }
 
-.cont-flex {
+.item {
+  padding: 24rpx;
+  border-bottom: 2rpx solid #eeeeee;
   display: flex;
+  height: 150rpx;
+  background-color: #ffffff;
+  border-radius: 12rpx;
 }
 
-.texts {
-  margin: 0rpx auto;
+.news-img {
+  width: 224rpx;
+  height: 150rpx;
 }
 
-.texts p {
-  font-size: 24rpx;
-  font-family: PingFang SC;
-  font-weight: 400;
+.news-img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+
+.date {
   color: #999999;
+  font-size: 24rpx;
 }
 
-.cont-text {
-  /* padding: 0rpx 8rpx; */
-  width: 480rpx;
+.item .news-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 24rpx;
+}
+
+.item .news-title {
   font-size: 28rpx;
-  font-family: PingFang SC;
-  font-weight: 400;
-  color: #333333;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  font-weight: 800;
+  -webkit-line-clamp: 3;
 }
 
-.cont-img {
-  margin: 0rpx 24rpx;
-  width: 120rpx;
-  height: 120rpx;
-  background: #333333;
-  border-radius: 8rpx;
+.item .content {
+  max-height: 80rpx;
+  overflow: hidden;
+}
+
+.content .ellipsis-text {
+  font-size: 22rpx;
+  -webkit-line-clamp: 2;
+  color: #666666;
+}
+.left,
+.right {
+  width: 60rpx;
+  height: 60rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+}
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.left::before,
+.right::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: -20rpx -20rpx 0 0 #ffffff;
+}
+
+.right::before {
+  box-shadow: 20rpx -20rpx 0 0 #ffffff;
+}
+
+.content text {
+  color: #999999;
+  font-size: 20rpx;
+}
+
+.item:last-child {
+  border-bottom: none;
 }

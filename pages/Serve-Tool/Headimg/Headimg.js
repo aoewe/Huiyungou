@@ -1,9 +1,13 @@
 const fetch = require("../../../utils/reques").default;
-const host = `https://stzs.stzs6888.com`
+const host = `https://app.taishih.com`
 Page({
   data: {
     userInfo: {},
     loading: false
+  },
+  async editUser(avatar){
+    await fetch.editUser({avatar})
+    await this.getUserInfo()
   },
   upAvatar() {
     const that = this
@@ -13,17 +17,17 @@ Page({
         const info = wx.getStorageSync('USERINFO')
         wx.uploadFile({
           filePath: res.tempFilePaths[0],
-          name: 'file[]',
+          name: 'file',
           header: {
             token: info.token,
             uid: info.id
           },
-          url: host + '/app/User/editHeadImg',
+          url: host + '/app/upload/uploadImg',
           formData: {
             path_name: 'appImg/userAvatar'
           },
-          success(res) {
-            that.getUserInfo()
+          success(res){
+            that.editUser(JSON.parse(res.data).data)
           }
         })
       }

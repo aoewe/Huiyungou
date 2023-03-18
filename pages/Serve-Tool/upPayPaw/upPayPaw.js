@@ -146,7 +146,8 @@ Page({
       mobile:wx.getStorageSync('USERINFO').mobile,
       type: 1,
       new: this.data.payPassword,
-      confirm: this.data.payPasswordagain
+      confirm: this.data.payPasswordagain,
+      username:wx.getStorageSync('USERINFO').username
     }
     const {code,msg} = await fetch.resetUserPassword(data)
       if (code === 0) {

@@ -8,6 +8,19 @@ Page({
     userInfo:{},
     type: 0
   },
+  scanCode(){
+    let that = this
+    wx.scanCode({
+      success(e){
+        let str = e.result
+        let index = str.indexOf('=')
+        let code = str.slice(index+1)
+        that.setData({
+          to_user:code
+        })
+      }
+    })
+  },
   async getUserInfo() {
     const {code,data} = await api.getUserInfo()
     if (code === 0) {

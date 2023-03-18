@@ -1,8 +1,9 @@
+<wxs src="../../../utils/comm.wxs" module="comm"></wxs>
 <view>
   <view>
-    <view hover-class="none" data-item="{{item}}" bindtap="{{isSel?'onBack':''}}" url="{{item.url}}" class="item" wx:for="{{list}}" wx:key="index">
+    <view hover-class="none" data-item="{{item}}" bindtap="{{isSel?'onBack':'toEdit'}}" url="{{item.url}}" class="item" wx:for="{{list}}" wx:key="index">
       <view class="nav-top">
-        <image class="bimg" src="/static/icons/china.png"></image>
+        <image class="bimg" src="/static/imgs/default.png"></image>
         <view class="nav-text">
           <view class="nav-txt">{{item.bank_name}}</view>
           <view class="nav-txt" style="font-size: 24rpx;">银联卡</view>
@@ -12,7 +13,7 @@
         <text>****</text>
         <text>****</text>
         <text>****</text>
-        <text>{{item.bank_card}}</text>
+        <text>{{comm.toStr(item.bank_card)}}</text>
       </vieew>
     </view>
     <navigator class="cont-list" url="../Addbank/Addbank">

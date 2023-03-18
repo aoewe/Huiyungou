@@ -58,13 +58,10 @@ Page({
       },
     ],
   },
-
-  onLoad(options) {
-
-  },
-
-  onReady() {
-
+  imgError(){
+    this.setData({
+      'UserInfo.avatar':'http://tshui.taoqiy.com/register/static/default.png'
+    })
   },
 
   onShow() {
@@ -82,8 +79,6 @@ Page({
 
   exit() {
     wx.removeStorageSync('USERINFO')
-    var value = wx.getStorageSync('USERINFO')
-    console.log('退出', value);
     wx.redirectTo({
       url: '/pages/Login/login',
     })

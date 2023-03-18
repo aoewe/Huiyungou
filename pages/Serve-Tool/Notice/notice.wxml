@@ -1,13 +1,16 @@
-
-<view>
-<view class="content" wx:for="list">
-  <view class="title">答题瓜分现金红包，本场奖金池18万两千三答题瓜分现金红包，本场奖三红包还有5分钟，请尽快进入页面准备答页面</view>
-  <view class="cont-flex">
-  <view class="texts">
-  <view class="cont-text">距离答题瓜分红包还有5分钟，请尽快进入页面准备答页面准备答题页面准备答题题</view>
-  <p>今天13:23</p>
+<wxs src="../../../utils/comm.wxs" module="comm"></wxs>
+<view class="left"></view>
+<view class="right"></view>
+<view class="list">
+  <view bindtap="toInfo" data-info="{{item}}" wx:for="{{list}}" wx:key="index" data-info="{{item}}" bindtap="toInfo" class="item" hover-class="_active">
+    <van-image custom-class="news-img" src="{{item.banner_url}}" fit="cover" lazy-load />
+    <view class="news-info">
+      <view class="news-title ellipsis-text">{{item.title}}</view>
+      <text class="date">{{comm.formatDate(item.create_time)}}</text>
+    </view>
+  </view>
 </view>
-  <image class="cont-img" src=""/>
+<view class="no-content" wx:if="{{list.length<1 && !loading}}">
+  <image src="../../../static/imgs/nocontent.png"></image>
 </view>
-</view>
-</view>
+<view wx:if="{{list.length===total&&list.length>=4}}" class="cnt-text">已全部加载</view>

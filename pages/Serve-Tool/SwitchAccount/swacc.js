@@ -48,7 +48,6 @@ Page({
     } else {
       accounts.push(res.data);
       wx.setStorageSync('accounts', accounts);
-      console.log('账号添加成功');
     }
     wx.setStorageSync('USERINFO', id)
 

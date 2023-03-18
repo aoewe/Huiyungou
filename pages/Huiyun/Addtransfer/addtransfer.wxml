@@ -20,7 +20,9 @@
     <view class="b-bank">
       <view>提现金额</view>
     </view>
-    <input model:value="{{to_user}}" style="margin: 0rpx 40rpx;" placeholder="请输入到账账户（会员编号）" />
+    <view class="code-input">
+      <input model:value="{{to_user}}" style="margin: 0rpx 40rpx;" placeholder="请输入到账账户（会员编号）" /><van-icon bindtap="scanCode" class="scan" name="scan" />
+    </view>
     <view class="btn">
       <van-button color="#2A9F93" bindtap="register" size="round" round custom-class="external-class">提交</van-button>
     </view>
