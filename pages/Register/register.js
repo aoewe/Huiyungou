@@ -13,7 +13,7 @@ Page({
     password: '',
     up_uuid: '',
     show: false,
-    type: false,
+    type: undefined,
     text: '发送验证码'
   },
   // 发送验证码
@@ -80,7 +80,7 @@ Page({
     const res = await api.login(param)
     if (res.code === 0) {
       const type = this.data.type
-      if (type === false) {
+      if (type === undefined) {
         const accounts = wx.getStorageSync('accounts') || [];
         const existingAccount = accounts.find(account => account.username === res.data.username);
         if (existingAccount) {

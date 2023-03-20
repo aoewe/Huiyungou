@@ -2,7 +2,8 @@ const api = require('../../../utils/reques').default
 Page({
   data: {
     integral_pq: '',
-    showPassword:false
+    showPassword:false,
+    userInfo:'',
   },
   async getUserInfo() {
     const {
@@ -46,7 +47,9 @@ Page({
       code
     } = await api.changeIntegral({
       integral_pq: this.data.integral_pq,
-      surplus_password
+      surplus_password,
+      type:1,
+      to_user:this.data.userInfo.uuid
     })
     if (code === 0) {
       this.setData({

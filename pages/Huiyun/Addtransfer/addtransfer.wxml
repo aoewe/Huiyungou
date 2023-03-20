@@ -15,13 +15,13 @@
   <view class="cont-block">
     <view class="b-drawal">提现金额</view>
     <view class="withdrawal">
-      <text class="">¥</text><input model:value="{{integral}}" maxlength="{{userInfo.integral.length}}" bindinput="changeIntegral" placeholder-style="font-size:36rpx" placeholder="请输入转赠数量" style="height: 90rpx;margin-left: 20rpx;" type="digit" auto-focus />
+      <text class="">¥</text><input model:value="{{integral}}" maxlength="{{userInfo.integral.length}}" bindinput="changeIntegral" placeholder-style="font-size:26rpx" placeholder="请输入转赠数量" style="height: 90rpx;margin-left: 20rpx;" type="digit" auto-focus />
     </view>
     <view class="b-bank">
       <view>提现金额</view>
     </view>
     <view class="code-input">
-      <input model:value="{{to_user}}" style="margin: 0rpx 40rpx;" placeholder="请输入到账账户（会员编号）" /><van-icon bindtap="scanCode" class="scan" name="scan" />
+      <input model:value="{{to_user}}"  style="margin: 0rpx 40rpx;" placeholder="请输入到账账户（会员编号）" /><van-icon bindtap="scanCode" class="scan" name="scan" />
     </view>
     <view class="btn">
       <van-button color="#2A9F93" bindtap="register" size="round" round custom-class="external-class">提交</van-button>

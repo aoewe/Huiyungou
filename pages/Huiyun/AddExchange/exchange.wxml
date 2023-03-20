@@ -15,7 +15,7 @@
   <view class="cont-block">
     <view class="b-drawal">兑换积分</view>
     <view class="withdrawal">
-      <text class="">数量：</text><input model:value="{{integral_pq}}" maxlength="{{userInfo.integral_pq.length}}" bindinput="changeIntegral" placeholder="请输入兑换数量" style="margin-left: 20rpx;width: 400rpx;" auto-focus />
+      <text class="">数量：</text><input model:value="{{integral_pq}}" maxlength="{{userInfo.integral_pq.length}}" bindinput="changeIntegral" placeholder-style="font-size:26rpx" placeholder="请输入兑换数量" style="margin-left: 20rpx;width: 400rpx;" auto-focus />
     </view>
     <view class="btn">
       <van-button color="#2A9F93" bindtap="register" size="round" round custom-class="external-class">提交</van-button>
