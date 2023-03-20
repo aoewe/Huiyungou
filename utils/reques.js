@@ -210,6 +210,11 @@ const getBankCardList = data => {
     resolve(request(api.getBankCardList, 'post', data));
   });
 };
+const getFansList = data => {
+  return new Promise((resolve, reject) => {
+    resolve(request(api.getFansList, 'post', data));
+  });
+};
 // 查看物流状态
 const getExpressInfo = data => {
   return new Promise((resolve, reject) => {
@@ -395,6 +400,7 @@ export default {
   getExpressInfo,
   getBankCardList,
   readAll,
+  getFansList,
   getNewsByTos,
   getNewsBrief,
   getWineComments,

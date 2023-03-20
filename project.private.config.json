@@ -11,7 +11,7 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/Reward/reward",
+          "pathName": "pages/TabBar/user/user",
           "query": "",
           "launchMode": "default",
           "scene": null

@@ -3,7 +3,10 @@
     <image src="{{item.main_pic}}" mode="aspectFill" class="product-image" />
     <view class="info">
       <view class="ellipsis-text">{{item.product_name}}</view>
+      <view class="dflex">
       <text class="textone">¥<text class="texttow">{{item.price}}</text></text>
+      <view class="goby">立即购买</view>
+    </view>
     </view>
   </navigator>
 </view>

@@ -27,7 +27,8 @@
     "pages/Huiyun/AddExchange/exchange",
     "pages/Huiyun/ExchangeRecord/ExchangeR",
     "pages/Serve-Tool/Notice/notice",
-    "pages/Serve-Tool/upPayPaw/upPayPaw"
+    "pages/Serve-Tool/upPayPaw/upPayPaw",
+    "pages/Serve-Tool/FansList/FansList"
   ],
   "subPackages": [
     {
