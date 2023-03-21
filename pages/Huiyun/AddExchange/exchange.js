@@ -2,7 +2,9 @@ const api = require('../../../utils/reques').default
 Page({
   data: {
     integral_pq: '',
-    showPassword:false
+    showPassword:false,
+    userInfo:{},
+    changeType:''
   },
   async getUserInfo() {
     const {
@@ -42,13 +44,20 @@ Page({
     })
   },
   async submit(surplus_password) {
-    const {
-      code
-    } = await api.changeIntegral({
-      integral_pq: this.data.integral_pq,
+    const params = {
+      type:1,
+      to_user:this.data.userInfo.uuid,
       surplus_password
-    })
-    if (code === 0) {
+    }
+    let res = null
+    if(this.data.changeType==0){
+      params.integral_pq = this.data.integral_pq
+      res = await api.changeIntegral(params)
+    }else{
+      params.integral = this.data.integral_pq
+      res = await api.transferIntegral(params)
+    }
+    if (res.code === 0) {
       this.setData({
         integral_pq: '',
         showPassword:false
@@ -61,6 +70,7 @@ Page({
     }
   },
   onLoad(options) {
+    this.setData({changeType:options.type||''})
     this.getUserInfo()
   }
 })

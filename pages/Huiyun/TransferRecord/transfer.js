@@ -1,9 +1,9 @@
 const api = require('../../../utils/reques').default
 
 Page({
-
   data: {
     type: '',
+    changeType:'',
     list: [],
     total: 0,
     page: 1,
@@ -15,14 +15,15 @@ Page({
     const {
       type,
       page,
-      size
+      size,changeType
     } = this.data
     const params = {
-      type,
+      type:changeType==0?3:2,
       page,
       size
     }
-    type == 2 && (params.stream_type = 4)
+    type==2 &&(params.stream_type = 4)
+    type==3 &&(params.stream_type = changeType==0?8:7)
     const {
       code,
       data
@@ -38,11 +39,13 @@ Page({
     }
   },
   onLoad(options) {
+    const {changeType,type} = options
     wx.setNavigationBarTitle({
-      title: options.type == 2 ? '转赠记录' : '兑换记录',
+      title: type == 2 ? `${changeType==0?'拼券积分':'积分'}转赠记录` : `${changeType==0?'拼券积分':'积分'}兑换记录`,
     })
     this.setData({
-      type: options.type
+      type,
+      changeType
     }, () => {
       this.getStreamList()
     })

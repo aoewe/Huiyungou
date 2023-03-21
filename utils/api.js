@@ -49,7 +49,7 @@ const api = {
   getExhibitsStream: `${apiurl}/app/Capital/getExhibitsStream`, //展品流水
   getDealOrder: `${apiurl}/app/Deal/getDealOrder`, //获取拼券专区仓单购买记录
   checkRealName: `${apiurl}/app/User/checkRealName`, //实名认证
-  changeIntegral: `${apiurl}/app/Capital/changeIntegral`, //积分转化
+  changeIntegral: `${apiurl}/app/Capital/changeIntegral`, //拼券积分转化
   getArticleList: `${apiurl}/app/user/getArticleList`, //文章列表
   confirmOrder: `${apiurl}/app/order/confirmOrder`, //收货
   getArticleInfo: `${apiurl}/app/user/getArticleInfo`, //文章详情

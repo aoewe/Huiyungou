@@ -25,16 +25,16 @@
   <view class="indicator">
     <view wx:for="{{orderIcon}}" wx:key="index" class="dot {{index==swiperIndex ? 'dots' : ''}}"></view>
   </view>
-  <view class="threeicon">
-    <navigator hover-class="none" class="black" url="../../Huiyun/Addtransfer/addtransfer">
+  <view class="threeicon" wx:if="{{swiperIndex==0||swiperIndex==1}}">
+    <navigator hover-class="none" class="black" url="../../Huiyun/Addtransfer/addtransfer?type={{swiperIndex}}">
       <image src="/static/icons/zhuanzeng.png" />
       转赠
     </navigator>
-    <navigator hover-class="none" class="black" url="../../Huiyun/AddExchange/exchange">
+    <navigator hover-class="none" class="black" url="../../Huiyun/AddExchange/exchange?type={{swiperIndex}}">
       <image src="/static/icons/exchange.png" />
       兑换
     </navigator>
-    <navigator hover-class="none" class="black" url="../../Huiyun/AddWithdrawal/withdrawal">
+    <navigator wx:if="{{swiperIndex==1}}" hover-class="none" class="black" url="../../Huiyun/AddWithdrawal/withdrawal">
       <image src="/static/icons/Cash.png" />
       提现
     </navigator>
@@ -46,13 +46,13 @@
   <view class="cont-query" wx:for="{{cardInfo}}" wx:key="index">
     <view>
       <view class="cont-img">
-        <image src="/static/icons/zrmoney.png" />
+        <image src="/static/icons/{{item.reduce_balance*1>0?'srmoney':'zrmoney'}}.png" />
         消费
       </view>
       <view class="cont-t">说明：{{item.explain}}</view>
       <view class="cont-t">{{comm.formatDate(item.create_time)}}</view>
     </view>
-    <view class="cont-x">{{item.after_balance}}</view>
+    <view class="cont-x" style="color: {{item.reduce_balance*1>0?'#FF4701':''}};">{{item.reduce_balance>0?('+'+item.reduce_balance):item.reduce_balance}}</view>
   </view>
   <view class="loading" wx:if="{{cardLoading}}">
     <van-loading type="spinner"></van-loading>

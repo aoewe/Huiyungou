@@ -3,6 +3,7 @@ const api = require('../../../utils/reques').default
 Page({
   data: {
     showPassword:false,
+    changeType:'',
     to_user: '',
     integral: '',
     userInfo:{},
@@ -30,10 +31,17 @@ Page({
     }
   },
   async transferIntegral(surplus_password){
-    const {to_user,integral,type} = this.data
-    const params = {to_user,integral,type,surplus_password}
-    const {code} = await api.transferIntegral(params)
-    if(code===0){
+    const {to_user,integral,type,changeType} = this.data
+    const params = {to_user,type,surplus_password}
+    let res = null
+    if(changeType==0){
+      params.integral_pq = integral
+      res = await api.changeIntegral(params)
+    }else{
+      params.integral = integral
+      res = await api.transferIntegral(params)
+    }
+    if(res.code===0){
       this.setData({
         showPassword:false,
         to_user:'',
@@ -51,7 +59,8 @@ Page({
   },
   changeIntegral(e){
     const num = parseInt(e.detail.value)
-    if(num>this.data.userInfo.integral) this.setData({integral:this.data.userInfo.integral})
+    const total = this.data.changeType==0?this.data.userInfo.integral_pq:this.data.userInfo.integral
+    if(num>total) this.setData({integral:total})
   },
   closePay(){this.setData({showPassword:false})},
   async register(){
@@ -69,6 +78,7 @@ Page({
     })
   },
   onLoad(options) {
+    this.setData({changeType:options.type||''})
     this.getUserInfo()
   }
 
