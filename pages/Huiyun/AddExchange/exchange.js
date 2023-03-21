@@ -22,9 +22,8 @@ Page({
   },
   changeIntegral(e) {
     const num = parseInt(e.detail.value)
-    if (num > this.data.userInfo.integral_pq) this.setData({
-      integral_pq: this.data.userInfo.integral_pq
-    })
+    const total = this.data.changeType==0?this.data.userInfo.integral_pq:this.data.userInfo.integral
+    if(num>total) this.setData({integral_pq:total})
   },
   closePay() {
     this.setData({

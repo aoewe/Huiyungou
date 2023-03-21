@@ -15,7 +15,7 @@
   <view class="cont-block">
     <view class="b-drawal">提现金额</view>
     <view class="withdrawal">
-      <text class="">¥</text><input model:value="{{integral}}" maxlength="{{userInfo.integral.length}}" bindinput="changeIntegral" placeholder-style="font-size:36rpx" placeholder="请输入转赠数量" style="height: 90rpx;margin-left: 20rpx;" type="digit" auto-focus />
+      <text class="">¥</text><input model:value="{{integral}}" maxlength="{{changeType==0?userInfo.integral_pq.length:userInfo.integral.length}}" bindinput="changeIntegral" placeholder-style="font-size:36rpx" placeholder="请输入转赠数量" style="height: 90rpx;margin-left: 20rpx;" type="digit" auto-focus />
     </view>
     <view class="b-bank">
       <view>提现金额</view>
