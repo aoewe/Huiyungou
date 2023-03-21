@@ -8,7 +8,7 @@
   </view>
 </view>
 <view class="loading">
-  <van-loading wx:if="{{loading}}" type="spinner" color="#B7312A" />
+  <van-loading wx:if="{{loading}}" type="spinner" />
 </view>
 <view class="cnt-text" wx:if="{{list.length===total && list.length>5}}" style="padding-bottom: {{bottom}}rpx;">已全部加载</view>
 <view class="no-content" wx:if="{{!list.length && !loading}}">

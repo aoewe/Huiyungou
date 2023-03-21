@@ -3,5 +3,5 @@
     "van-image": "@vant/weapp/image/index",
     "van-loading": "@vant/weapp/loading/index"
   },
-  "navigationBarTitleText": "我的粉丝"
+  "navigationBarTitleText": "我的直推"
 }
