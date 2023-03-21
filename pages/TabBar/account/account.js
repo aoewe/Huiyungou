@@ -5,7 +5,7 @@ Page({
     orderIcon: [],
     cardInfo: [],
     page:1,
-    size:5,
+    size:10,
     total:0,
     swiperIndex: 0,
     vertical: false,
@@ -65,7 +65,10 @@ Page({
         },
       ]
       this.setData({
-        orderIcon: content
+        orderIcon: content,
+        cardLoading:true,
+        page:1,
+        cardInfo:[]
       },()=>{
         this.getStreamList()
       })
