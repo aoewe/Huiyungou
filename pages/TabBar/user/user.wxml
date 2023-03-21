@@ -1,13 +1,13 @@
 <view>
   <image class="cont-top" src="/static/icons/mybackage.png"></image>
   <view class="top-title" style="top:{{statusBar.top}}px;">我的</view>
-  <view class="head-flex" style="padding-top: {{statusBar.top+statusBar.height+24}}px;">
+  <navigator class="head-flex" style="padding-top: {{statusBar.top+statusBar.height+24}}px;" url="/pages/Serve-Tool/Headimg/Headimg">
     <van-image bind:error="imgError" round custom-class="head-picture" src="{{UserInfo.avatar}}" />
     <view>
       <view class="head-txt user">{{UserInfo.username}}<text class="identity">{{UserInfo.type_name}}</text></view>
       <view class="head-txt" style="font-size: 29rpx;">会员号：{{UserInfo.uuid}}</view>
     </view>
-  </view>
+  </navigator>
   <view class="my-spping">
     <navigator hover-class="none" url="../../subPages/orderList/orderList" class="title">我的订单<view style="color: #999999;">查看所有订单
         <van-icon name="arrow" />

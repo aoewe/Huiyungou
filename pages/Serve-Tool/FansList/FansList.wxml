@@ -2,8 +2,8 @@
   <view class="item" wx:for="{{list}}" wx:key="index">
     <van-image lazy-load round width="102rpx" height="102rpx" src="{{item.avatar}}" />
     <view>
-      <text>{{item.username}}</text>
-      <text>{{item.mobile}}</text>
+      <view>{{item.username}}</view>
+      <view>{{item.mobile}}</view>
     </view>
   </view>
 </view>
