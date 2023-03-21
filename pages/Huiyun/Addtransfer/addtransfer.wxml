@@ -8,10 +8,10 @@
     <view class="block" style="text-align: end;"></view>
   </view>
   <view class="flex">
-    <view class="Mymoney">我的积分</view>
-    <navigator url="../TransferRecord/transfer?type=2">转赠记录</navigator>
+    <view class="Mymoney">{{changeType==0?'我的拼券积分':'我的积分'}}</view>
+    <navigator url="../TransferRecord/transfer?type=2&changeType={{changeType}}">转赠记录</navigator>
   </view>
-  <view class="integral">{{userInfo.integral || 0}}</view>
+  <view class="integral">{{(changeType==0?userInfo.integral_pq:userInfo.integral) || 0}}</view>
   <view class="cont-block">
     <view class="b-drawal">提现金额</view>
     <view class="withdrawal">

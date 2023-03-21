@@ -2,9 +2,11 @@
 <view class="box">
   <view class="conter-list" wx:for="{{list}}" wx:key="index">
     <view>
-      <view class="black" wx:if="{{item.type===2}}">{{item.explain}}</view>
-      <view class="black" wx:if="{{item.type===3}}">
-        <text>拼券积分</text><text style="color: #2A9F93;">转</text><text>积分</text>
+      <view class="black" wx:if="{{type==2}}">
+        <text>{{changeType==0?'拼券积分':'积分'}}</text><text style="color: #2A9F93;">转赠</text><text>{{changeType==0?'拼券积分':'积分'}}</text>
+      </view>
+      <view class="black" wx:if="{{type==3}}">
+        <text>{{changeType==0?'拼券积分':'积分'}}</text><text style="color: #2A9F93;">兑换</text><text>{{changeType==0?'积分':'拼券积分'}}</text>
       </view>
       <view class="black">
         <text>{{item.user_name}}</text>

@@ -1,5 +1,4 @@
 const api = require('../../../utils/reques').default
-
 Page({
   data: {
     statusBar: wx.getMenuButtonBoundingClientRect(),
@@ -66,8 +65,9 @@ Page({
         },
       ]
       this.setData({
-        orderIcon: content,
-        cardLoading: false
+        orderIcon: content
+      },()=>{
+        this.getStreamList()
       })
     }
   },
