@@ -54,7 +54,12 @@ Page({
       {
         img: '/static/icons/7.png',
         lable: '客服中心',
-        url: '../subPages/orderList/orderList?active=4'
+        url: '../subPages/orderList/orderList?'
+      },
+      {
+        img: '/static/icons/8.png',
+        lable: '我的直推',
+        url: '../../Serve-Tool/FansList/FansList'
       },
     ],
   },

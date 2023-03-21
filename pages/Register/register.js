@@ -29,7 +29,11 @@ Page({
       type: 2
     }
 
-    const code = api.sendcode(params)
+    const res = await api.sendcode(params)
+      const {
+        code,
+        msg
+      } = res
     console.log(code);
     if (code === 0) {
       wx.showToast({
@@ -58,6 +62,11 @@ Page({
           fun()
         }, 1000)
       }
+    } else {
+      wx.showToast({
+        title: msg,
+        icon: 'none'
+      })
     }
   },
   back() {

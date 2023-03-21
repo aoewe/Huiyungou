@@ -53,6 +53,7 @@ const api = {
   getArticleList: `${apiurl}/app/user/getArticleList`, //文章列表
   confirmOrder: `${apiurl}/app/order/confirmOrder`, //收货
   getArticleInfo: `${apiurl}/app/user/getArticleInfo`, //文章详情
+  getFansList: `${apiurl}/app/User/getFansList`, //粉丝列表
   // getShareImg: `${apiurl}/app/common/getShareImg`, //生成二维码
   checkRecommend: `${apiurl}/app/Deal/checkRecommend`, //是否为直推
   transferExhibits1: `${apiurl}/app/Deal/transferExhibits1`, //直推配票

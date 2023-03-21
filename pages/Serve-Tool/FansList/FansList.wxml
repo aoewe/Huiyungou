@@ -1,0 +1,16 @@
+<view class="list">
+  <view class="item" wx:for="{{list}}" wx:key="index">
+    <van-image lazy-load round width="102rpx" height="102rpx" src="{{item.avatar}}" />
+    <view>
+      <text>{{item.username}}</text>
+      <text>{{item.mobile}}</text>
+    </view>
+  </view>
+</view>
+<view class="loading">
+  <van-loading wx:if="{{loading}}" type="spinner" color="#B7312A" />
+</view>
+<view class="cnt-text" wx:if="{{list.length===total && list.length>5}}" style="padding-bottom: {{bottom}}rpx;">已全部加载</view>
+<view class="no-content" wx:if="{{!list.length && !loading}}">
+  <image src="../../../static/imgs/nocontent.png"></image>
+</view>

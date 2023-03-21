@@ -1,6 +1,6 @@
 <view style="height: {{statusBar.height}}px;padding-top: {{statusBar.top}}px;">
 <image class="backgran" src="/static/icons/logint.png"/>
-  <navigator hover-class="noen" open-type="navigateBack">
+  <navigator hover-class="noen" url="../TabBar/home/home">
     <van-icon size="44rpx" style="height: {{statusBar.height}}px;padding-left: 28px;margin-top: 160rpx;" name="cross" />
   </navigator>
 </view>
